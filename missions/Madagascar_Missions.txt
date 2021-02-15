@@ -1,0 +1,1075 @@
+mgr_minors_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = madagasque
+	
+			}			
+			has_country_shield = yes
+			
+			large_doamain_mgr = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_iroquois_warriors
+				
+				trigger = {
+				
+					num_of_cities = 3
+				
+				}
+				
+				effect = {
+				
+					madagascar_highlands_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					betsimasaraka_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					sakalava_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					} 
+					
+					southern_madagascar = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+				
+				}
+			
+			}
+			
+			unite_the_north_mgr = {
+			
+				position = 2
+				required_missions = {large_doamain_mgr}
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = madagascar_highlands_area
+						area = betsimasaraka_area
+						area = sakalava_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					madagascar_highlands_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+					betsimasaraka_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+					sakalava_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+				}
+				
+				effect = {
+				
+					add_mil_power = 50
+				
+				}
+			
+			}
+			
+			malagasy_unity_mgr = {
+			
+				position = 3
+				required_missions = {pacify_the_south_mgr unite_the_north_mgr}
+				icon = mission_crusade_for_varna
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = madagascar_highlands_area
+						area = betsimasaraka_area
+						area = sakalava_area
+						area = southern_madagascar
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				
+				trigger = {
+				
+					madagascar_highlands_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+					betsimasaraka_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+					sakalava_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+					}
+					
+					southern_madagascar = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					adm_power = 200
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "united_madagascar_mgr"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+			rival_kilwa_mgr = {
+			
+				position = 4
+				required_missions = {malagasy_unity_mgr}
+				icon = mission_establish_high_seas_navy
+				
+				trigger = {
+				
+					ROOT = {
+				
+						navy_size = ZAN
+						navy_size = 30
+						navy_size_percentage = 0.85
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1186 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					1192 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+}
+
+mgr_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MGR
+	
+			}			
+			has_country_shield = yes
+			
+			
+			sieze_sofala_mgr = {
+			
+				position = 5
+				required_missions = {rival_kilwa_mgr}
+				icon = mission_portuguese_oman
+				
+				provinces_to_highlight = {
+				
+					OR = {
+
+						province_id = 1192
+						province_id = 1186
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					1192 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1186 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					mozambique_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					central_swahili_coast_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					zimbabwe_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			besiege_zanzibar_mgr = {
+			
+				position = 6
+				required_missions = {sieze_sofala_mgr}
+				icon = mission_zanzibari_trade
+				
+				provinces_to_highlight = {
+				
+					OR = {
+
+						area = mozambique_area
+						area = central_swahili_coast_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					mozambique_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					central_swahili_coast_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "conquest_of_zanzibar_mgr"
+						duration = 7300
+					
+					}
+					
+					northern_swahili_coast_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					mombasa_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			conquer_the_swahili_mgr = {
+			
+				position = 7
+				required_missions = {besiege_zanzibar_mgr}
+				icon = the_shape_of_trades_to_come
+				
+				provinces_to_highlight = {
+				
+					OR = {
+
+						area = northern_swahili_coast_area
+						area = mombasa_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					northern_swahili_coast_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					mombasa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 25
+					
+					mogadishu_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			mogadishu_commerce = {
+			
+				position = 9
+				required_missions = {conquer_the_swahili_mgr}
+				icon = mission_dominate_home_trade_node
+				
+				provinces_to_highlight = {
+				
+					OR = {
+
+						area = mogadishu_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					mogadishu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 2.5
+				
+				}
+			
+			}
+
+}
+
+mgr_minors_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = madagasque
+	
+			}			
+			has_country_shield = yes
+			
+			
+			pacify_the_south_mgr = {
+			
+				position = 2
+				required_missions = {large_doamain_mgr}
+				icon = mission_african_soldier
+				
+				provinces_to_highlight = {
+				
+					OR = {
+
+						area = southern_madagascar
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					southern_madagascar = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_mil_power = 50
+				
+				}
+			
+			}
+			
+			religious_unity_mgr = {
+			
+				position = 3
+				required_missions = {pacify_the_south_mgr}
+				icon = mission_hands_praying
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = madagascar_highlands_area
+						area = betsimasaraka_area
+						area = sakalava_area
+						area = southern_madagascar
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				
+				trigger = {
+				
+					madagascar_highlands_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+						has_owner_religion = yes
+					}
+					
+					betsimasaraka_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+						has_owner_religion = yes
+					}
+					
+					sakalava_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+						type = all
+						has_owner_religion = yes
+					}
+					
+					southern_madagascar = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						has_owner_religion = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "united_in_faith_mgr"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+mgr_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MGR
+	
+			}			
+			has_country_shield = yes
+			
+			
+			build_temples_mgr = {
+			
+				position = 3
+				required_missions = {religious_unity_mgr}
+				icon = mission_temple_patronage
+				
+				provinces_to_highlight = {
+					owned_by = ROOT
+					has_tax_building_trigger = no
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 5
+								has_tax_building_trigger = yes
+							}
+						}
+					}
+				}
+				
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 5
+						has_tax_building_trigger = yes
+					}
+				}
+				
+				effect = {
+				
+					add_adm_power = 50
+					add_prestige = 20
+				
+				}
+			
+			}
+			
+			end_mutapa_mgr = {
+			
+				position = 6
+				required_missions = {sieze_sofala_mgr}
+				icon = mission_zambezi_gold
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = zimbabwe_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					zimbabwe_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "end_of_mutapa_mgr"
+						duration = 7300
+					
+					}
+					
+					butua_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					lower_zambezi_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			control_tete_mgr = {
+			
+				position = 7
+				required_missions = {end_mutapa_mgr}
+				icon = mission_asian_trader
+			
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = butua_area
+						area = lower_zambezi_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					butua_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					lower_zambezi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "fall_of_tete_mgr"
+						duration = 7300
+					
+					}
+					
+					4047 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+							
+					shire_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+							
+					4045 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+							
+					4044 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+							
+					4037 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+							
+					4048 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+							
+					4034 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+						
+				}
+			
+			}
+			
+			zambezi_war_mgs = {
+			
+				position = 8
+				required_missions = {control_tete_mgr}
+				icon = mission_african_trade_post
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						area = shire_area
+						province_id = 4047
+						province_id = 4037
+						province_id = 4048
+						province_id = 4045
+						province_id = 4044
+						province_id = 4034
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+		
+				trigger = {
+		
+					shire_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+					4047 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+							
+					4037 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+							
+					4048 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+							
+					4045 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+							
+					4044 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+							
+					4034 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+		
+				}
+				
+				effect = {
+				
+					add_mil_power = 100
+					add_prestige = 25
+					
+					4064 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+				
+				}
+			
+			}
+			
+			indian_ocean_islands_mgr = {
+			
+				position = 9
+				required_missions = {}
+				icon = mission_indian_stateman
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						province_id = 1248
+						province_id = 1101
+						province_id = 1100
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					OR = {
+					
+						1248 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+						1059 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						1100 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					kanara_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+				
+				}
+			
+			}
+			
+			invade_kanara_mgr = {
+			
+				position = 10
+				required_missions = {indian_ocean_islands_mgr}
+				icon = mission_indian_empire
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						area = kanara_area
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					kanara_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 2
+					
+					konkan_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+						
+					}
+				
+				}
+			
+			}
+			
+			australasian_brothers_mgr = {
+			
+				position = 11
+				required_missions = {invade_kanara_mgr}
+				icon = colonize_australia
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						region = australia_region
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					australia_region = {
+					
+						value = 3
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "australasian_relations_restored_mgr"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+mgr_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MGR
+	
+			}			
+			has_country_shield = yes
+			
+			head_south_mgr = {
+			
+				position = 7
+				required_missions = {end_mutapa_mgr}
+				icon = mission_colonial
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						province_id = 1183
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					1183 = {
+					
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+						
+					}
+				
+				}
+				
+				effect = {
+				
+					1183 = {
+					
+						add_province_modifier = {
+						
+							name = "colonial_center_mgr"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			cape_colony_mgr = {
+			
+				position = 8
+				required_missions = {head_south_mgr}
+				icon = colonize_the_cape
+				
+				provinces_to_highlight = {
+					OR = {
+					
+						area = cape_of_good_hope_area
+					
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					cape_of_good_hope_area = {
+					
+						type = all
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+						
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "cape_colony_mgr"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+}

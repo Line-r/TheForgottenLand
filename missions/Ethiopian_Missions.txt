@@ -1,0 +1,1195 @@
+eth_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ETH
+	
+			}			
+			has_country_shield = yes
+			
+			
+			build_temples_eth = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_european_church
+		
+					provinces_to_highlight = {
+						owned_by = ROOT
+						has_production_building_trigger = no
+						ROOT = {
+							NOT = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_tax_building_trigger = yes
+								}
+							}
+						}
+					}
+					
+					trigger = {
+					
+							num_of_owned_provinces_with = {
+								value = 3
+								has_tax_building_trigger = yes
+							}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "eth_zealousness"
+							duration = 5475
+						
+						}
+					
+					}
+			
+			}
+			
+			convert_the_infidels_eth = {
+			
+				position = 2
+				required_missions = {build_temples_eth}
+				icon = show_piety
+				
+				provinces_to_highlight = {
+					OR = {	
+				
+						province_id = 1213
+						province_id = 2791
+						province_id = 2768
+					
+					}
+						
+				}
+				
+				trigger = {
+				
+					1213 = {
+						religion = coptic
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2791 = {
+						religion = coptic
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2768 = {
+						religion = coptic
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+					
+					lower_nubia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			liberate_qasr_ibrim_eth = {
+			
+				position = 3
+				required_missions = {conquer_soba_eth convert_the_infidels_eth}
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = lower_nubia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					lower_nubia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1234 = {
+						if = {
+							limit = { NOT = {is_core = ROOT } }
+							add_core = ROOT
+						}
+					}
+					
+					lower_nubia_area = {
+					
+						add_province_modifier = {
+							
+							name = "eth_coptic_zealousness"
+							duration = 7300
+						
+						}
+					
+					}
+					
+					dongola_area = {
+					
+						add_province_modifier = {
+						
+							name = "eth_coptic_zealousness"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			great_churches_of_nubia_eth = {
+			
+				position = 4
+				required_missions = {liberate_qasr_ibrim_eth}
+				icon = mission_hands_praying
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = lower_nubia_area
+							area = dongola_area
+				
+						}
+					}
+				
+				trigger = {
+				
+					upper_nubia_area = {
+					
+						value = 1
+						has_tax_building_trigger = yes
+					
+					}
+					
+					dongola_area = {
+					
+						value = 1
+						has_tax_building_trigger = yes
+					
+					}
+					
+				}
+				
+				effect = {
+				
+					hidden_effect = {
+						lower_nubia_area = {
+							if = {
+								limit = { has_building = temple }
+								
+								add_province_modifier = {
+								
+									name = "eth_nubian_temples"
+									duration = -1
+								
+								}
+								
+							}
+						}
+						
+					
+					
+						dongola_area = {
+							if = {
+								limit = { has_building = temple }
+								
+								add_province_modifier = {
+								
+									name = "eth_nubian_temples"
+									duration = -1
+								
+								}
+								
+							}
+						}
+					
+					}
+					
+					custom_tooltip = eth_nub_temples_tooltip
+				
+				}
+			
+			}
+			
+			develop_nubia_eth = {
+			
+				position = 5
+				required_missions = {great_churches_of_nubia_eth}
+				icon = chivalry_is_not_dead
+				
+				provinces_to_highlight = {
+					OR = {	
+				
+						area = lower_nubia_area
+						area = dongola_area
+					
+					}
+						
+				}
+				
+					trigger = {
+			
+						development_in_provinces = {
+							value = 20
+							area = dongola_area
+						}
+						
+						development_in_provinces = {
+							value = 20
+							area = lower_nubia_area
+						}
+					
+					}
+				
+					effect = {
+					
+						dongola_area = {
+							limit = { 
+								owned_by = ROOT
+							}
+							add_province_modifier = {
+							
+								name = "rough_terrain_surpassed_aks"
+								duration = -1
+							
+							}
+						}
+						
+						lower_nubia_area = {
+							limit = { 
+								owned_by = ROOT
+							}
+							add_province_modifier = {
+							
+								name = "rough_terrain_surpassed_aks"
+								duration = -1
+							
+							}
+						}
+					
+					}
+				
+			}
+			
+			
+			
+}
+
+eth_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ETH
+	
+			}			
+			has_country_shield = yes
+			
+			
+			conquer_soba_eth = {
+			
+				position = 2
+				required_missions = { armies_of_ethiopia_eth }
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = upper_nubia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					upper_nubia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					dongola_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_dongola_eth = {
+			
+				position = 3
+				required_missions = { conquer_soba_eth }
+				icon = mission_crusade_for_varna
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = dongola_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					dongola_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1232 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					2324 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			spread_the_faith_eth = {
+			
+				position = 4
+				required_missions = {liberate_qasr_ibrim_eth}
+				icon = mission_establish_jesuit_missions
+				
+				provinces_to_highlight = {
+					OR = {
+				
+						area = hadiya_area
+						area = southern_ethiopia_area
+						province_id = 2761
+				
+					}
+				}
+				
+				trigger = {
+				
+						southern_ethiopia_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+							religion = coptic
+							
+						}
+					
+						hadiya_area = {
+					
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+							religion = coptic
+							
+						}
+					
+						2761 = {
+					
+							country_or_non_sovereign_subject_holds = ROOT
+							religion = coptic
+							
+						}
+					
+					}
+					
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "eth_expansion_of_the_faith"
+						duration = 7300
+					
+					}
+				
+				}
+				
+			}
+			
+			convert_egypt_eth = {
+			
+				position = 6
+				required_missions = { mamluk_border_eth spread_the_faith_eth }
+				icon = mission_hands_praying
+				
+				provinces_to_highlight = {
+					OR = {
+				
+						region = egypt_region
+				
+					}
+				}
+				
+				trigger = {
+				
+					egypt_region = {
+					
+						type = all
+						religion = coptic
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "eth_egyptian_recruits"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+			a_great_ethiopia_eth = {
+			
+				position = 9
+				required_missions = {convert_egypt_eth jerusalem_and_antioch_eth}
+				icon = mission_crusade_for_varna
+				
+				trigger = {
+				
+					adm_power = 200
+					dip_power = 200
+					mil_power = 200
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "eth_a_great_ethiopia"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+			
+
+}
+
+eth_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ETH
+	
+			}			
+			has_country_shield = yes
+			
+			
+			armies_of_ethiopia_eth = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_african_soldier
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					manpower_percentage = 0.80
+				
+				}
+				
+				effect = {
+				
+					upper_nubia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			a_shared_past_eth = {
+			
+				position = 3
+				required_missions = {armies_of_ethiopia_eth}
+				icon = mission_build_up_to_force_limit
+				
+				trigger = {
+				
+					OR = {
+				
+						MED = {
+							has_opinion = {
+								who = ROOT
+								value = 175
+							}
+						}
+					
+						MED = {
+						
+							is_subject_of = ETH
+						
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_eth.29 }
+				
+				}
+			
+			}
+			
+			mamluk_border_eth = {
+				
+				position = 5
+				required_missions = {spread_the_faith_eth a_shared_past_eth}
+				icon = mission_egyptian_mamluk_soldier
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 2324
+							province_id = 1232
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+		
+					2324 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1232 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					al_wahat_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					gulf_of_arabia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					vostani_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					said_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					bahari_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			up_to_cairo_eth = {
+			
+				position = 6
+				required_missions = { mamluk_border_eth }
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = bahari_area
+							area = said_area
+							area = vostani_area
+							area = gulf_of_arabia_area
+							area = al_wahat_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					gulf_of_arabia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					al_wahat_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					vostani_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					said_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					bahari_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					delta_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					add_country_modifier = {
+					
+						name = "eth_egyptian_campaign"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			liberate_alexandria_eth = {
+			
+				position = 7
+				required_missions = {up_to_cairo_eth}
+				icon = mission_konkani_pirates
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = delta_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					delta_area = {
+				
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 50
+					
+					palestine_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					2313 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			jerusalem_and_antioch_eth = {
+			
+				position = 8
+				required_missions = { liberate_alexandria_eth }
+				icon = jerusalem
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = palestine_area
+							province_id = 2313
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					palestine_area = {
+					
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2313 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "eth_defender_of_the_levant"
+						duration = -1
+					
+					}
+					
+					379 = {
+					
+						if = {
+						
+							limit = { NOT = { religion = coptic } }
+							
+							change_religion = coptic
+						
+						}
+					
+					}
+					
+					2313 = {
+					
+						if = {
+						
+							limit = { NOT = { religion = coptic } }
+							
+							change_religion = coptic
+						
+						}
+					
+					}
+					
+					419 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+
+			
+}
+
+eth_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ETH
+	
+			}			
+			has_country_shield = yes
+			
+				reconquer_dawaro_eth = {
+				
+					position = 2
+					required_missions = {armies_of_ethiopia_eth}
+					icon = mission_african_soldier
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1210
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						1210 = {
+						
+							owned_by = ROOT
+						
+						}
+					
+					}
+					
+					effect = {
+					
+						ifat_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						aussa_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+					
+					}
+				
+				}
+				
+				conquer_adal_eth = {
+				
+					position = 3
+					required_missions = {reconquer_dawaro_eth}
+					icon = mission_iroquois_warriors
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = ifat_area
+							area = aussa_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						aussa_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+						ifat_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					}
+					
+					effect = {
+					
+						2788 = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+					
+					}
+				
+				}
+				
+				somali_bases_eth = {
+				
+					position = 4
+					required_missions = {conquer_adal_eth}
+					icon = mission_establish_high_seas_navy
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 2788
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						2788 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_dip_power = 100
+					
+					}
+				
+				}
+				
+				trade_hegemon_eth = {
+				
+					position = 8
+					required_missions = {somali_bases_eth liberate_alexandria_eth conquer_aden_eth}
+					icon = mission_consume_the_baghels
+					
+					trigger = {
+					
+							2772 = {	#Ethiopia Node
+						
+								trade_share = {
+								country = ETH
+								share = 75
+								}
+							
+							}
+							
+							4346 = {	#Aden
+						
+								trade_share = {
+								country = ETH
+								share = 75
+								}
+							
+							}
+						
+						}
+						
+					effect = {
+						
+							add_country_modifier = {
+							
+								name = "eth_trade_hegemon"
+								duration = 73000
+							
+							}
+						
+						}
+					
+					}
+				
+
+			
+}
+
+eth_slot_5 = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ETH
+	
+			}			
+			has_country_shield = yes
+			
+			
+			build_a_stable_economy_eth = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_war_chest
+			
+				trigger = {
+			
+					treasury = 2500
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+				
+				}
+			
+			}
+			
+			build_manufactories_eth = {
+			
+				position = 2
+				required_missions = { build_a_stable_economy_eth }
+				icon = mission_entrepot_of_india
+			
+				trigger = {
+			
+					calc_true_if = {
+						all_owned_province = {
+							has_manufactory_trigger = yes
+						}
+						amount = 10
+					}
+					
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "eth_building_manufactories"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			naval_expansion_eth = {
+			
+				position = 5
+				required_missions = { somali_bases_eth }
+				icon = mission_galleys_in_port
+				
+				trigger = {
+				
+					navy_size_percentage = 1
+				
+				}
+				
+				effect = {
+				
+					388 = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+				
+				}
+			
+			}
+			
+			conquer_aden_eth = {
+			
+				position = 7
+				required_missions = {naval_expansion_eth}
+				icon = mission_dominate_home_trade_node
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 388
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					388 = {
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					4283 = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+				
+				}
+			
+			}
+			
+}

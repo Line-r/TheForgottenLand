@@ -1,0 +1,1120 @@
+mcm_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = moroccan
+						NOT = {
+						
+							tag = MOR
+						
+						}
+	
+			}			
+			has_country_shield = yes
+			
+			
+				atlantic_coast_mcm = {
+				
+					position = 2
+					required_missions = { obtain_independence_mcm }
+					icon = mission_invade_island
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = western_morocco_area
+							area = southern_morocco_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						western_morocco_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						southern_morocco_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						create_explorer = {
+					
+							tradition = 50
+						
+						}
+					
+					}
+				
+				}
+				
+				caribbean_settlement_mcm = {
+				
+					position = 3
+					required_missions = {atlantic_coast_mcm}
+					icon = mission_iberian_conquistador
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							colonial_region = colonial_the_carribean
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+				
+						num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+							value = 3
+							region = colonial_the_carribean
+							is_city = yes
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "colonial_expansion_mcm"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+				
+				contol_caribbean_trade_mcm = {
+				
+					position = 4
+					required_missions = { caribbean_settlement_mcm }
+					icon = trade_with_the_natives
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1516
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						1516 = {	#Caribbean Node
+							trade_share = {
+							country = ROOT
+							share = 50
+							}
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "caribbean_dominance_mcm"
+							duration = 7300
+						
+						}
+						
+						yucatan_area = {
+							limit = {
+								NOT = { is_core = ROOT }
+								NOT = { is_permanent_claim = ROOT }
+							}
+							add_permanent_claim = ROOT
+						}
+					
+						east_yucatan_area = {
+							limit = {
+								NOT = { is_core = ROOT }
+								NOT = { is_permanent_claim = ROOT }
+							}
+							add_permanent_claim = ROOT
+						}
+						
+						campeche_area = {
+							limit = {
+								NOT = { is_core = ROOT }
+								NOT = { is_permanent_claim = ROOT }
+							}
+							add_permanent_claim = ROOT
+						}
+					
+					}
+				
+				}
+				
+				floridan_colony_mcm = {
+				
+					position = 5
+					required_missions = { contol_caribbean_trade_mcm }
+					icon = mission_colonize_florida
+				
+					provinces_to_highlight = {
+						OR = {
+				
+							area = north_florida_area
+							area = florida_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+						
+						custom_trigger_tooltip = {
+							tooltip = moroccan_florida_tooltips
+							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+								value = 3
+								area = north_florida_area
+								is_city = yes
+							}
+								
+							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+								value = 5
+								area = florida_area
+								is_city = yes
+							}
+						}
+					
+					}
+					
+					effect = {
+					
+						928 = {
+						
+							add_center_of_trade_level = 1
+						
+						}
+						
+						north_florida_area = {
+							limit = { 
+								owned_by = ROOT
+							}
+							add_province_modifier = {
+							
+								name = "floridan_colony_mcm"
+								duration = -1
+							
+							}
+						}
+						
+						florida_area = {
+							limit = { 
+								owned_by = ROOT
+							}
+							add_province_modifier = {
+							
+								name = "floridan_colony_mcm"
+								duration = -1
+							
+							}
+						}
+					
+					}
+				
+				}
+			
+}
+
+mcm_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = moroccan
+						NOT = {
+						
+							tag = MOR
+						
+						}
+	
+			}			
+			has_country_shield = yes
+			
+			
+			obtain_independence_mcm = {
+			
+				position = 1
+				required_missions = { }
+				icon = mission_reclaim_morocco
+				
+				trigger = {
+				
+					is_subject = no
+					num_of_owned_provinces_with = {
+						value = 5
+						culture = moroccan
+					}
+				}
+				
+				effect = {
+				
+					northern_morocco_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					western_morocco_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					marrekesh_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					southern_morocco_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+
+					tafilalt_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					sus_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			defend_against_the_reconquista_mcm = {
+			
+				position = 2
+				required_missions = { obtain_independence_mcm }
+				icon = mission_reconquer_ceuta
+			
+				provinces_to_highlight = {
+						OR = {
+				
+							area = northern_morocco_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					northern_morocco_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					upper_andalucia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			shieldwall_granada_mcm = {
+			
+				position = 3
+				required_missions = { defend_against_the_reconquista_mcm }
+				icon = mission_protect_granada
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = upper_andalucia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					upper_andalucia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					toledo_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					lower_andalucia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					extremadura_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					upper_andalucia_area = {
+					
+						add_province_modifier = {
+						
+							name = "shieldwall_granada_mcm"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			the_new_andalucia_mcm = {
+			
+				position = 4
+				required_missions = {shieldwall_granada_mcm}
+				icon = mission_al_andalus
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = toledo_area
+							area = lower_andalucia_area
+							area = extremadura_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					toledo_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					lower_andalucia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					extremadura_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "the_new_al_andalus_mcm"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+			mayan_conquest_mcm = {
+			
+				position = 5
+				required_missions = {contol_caribbean_trade_mcm}
+				icon = mission_mayan_conquest
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = yucatan_area
+							area = east_yucatan_area
+							area = campeche_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					yucatan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					east_yucatan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					campeche_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					eastern_mexico_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					huasteca_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			mexican_coast_mission_mcm = {
+			
+				position = 7
+				required_missions = {mayan_conquest_mcm}
+				icon = mission_iroquois_warriors
+			
+				provinces_to_highlight = {
+						OR = {
+				
+							area = huasteca_area
+							area = eastern_mexico_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					eastern_mexico_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					huasteca_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					2647 = {
+					
+						add_province_modifier = {
+						
+							name = "colonial_office_mcm"
+							duration = -1
+						
+						}
+						
+						add_base_manpower = 2
+						add_base_production = 2
+						add_base_tax = 2
+					
+					}
+					
+					mexico_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					puebla_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+}
+
+mcm_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = moroccan
+						NOT = {
+						
+							tag = MOR
+						
+						}
+	
+			}			
+			has_country_shield = yes
+			
+			
+			control_fez_mcm = {
+			
+				position = 2
+				required_missions = {obtain_independence_mcm}
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = marrekesh_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					marrekesh_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_mil_power = 100
+				
+				}
+			
+			}
+			
+			unite_morocco_mcm = {
+			
+				position = 3
+				required_missions = {defend_against_the_reconquista_mcm control_fez_mcm}
+				icon = mission_establish_the_black_guard
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = marrekesh_area
+							area = sus_area
+							area = tafilalt_area
+							area = western_morocco_area
+							area = southern_morocco_area
+							area = northern_morocco_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					marrekesh_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					sus_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					tafilalt_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					western_morocco_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					southern_morocco_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					northern_morocco_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "morocco_united_mcm"
+						duration = -1
+					
+					}
+					
+					barbary_coast_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					algiers_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			saharan_expedition_mcm = {
+			
+				position = 4
+				required_missions = {unite_morocco_mcm}
+				icon = mission_traverse_the_sahara
+				
+				provinces_to_highlight = {
+						OR = {
+				
+						province_id = 2466
+						province_id = 346
+				
+					}
+				}
+				
+				trigger = {
+				
+					OR = {
+					
+						2466 = {
+							development = 15
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						
+						346 = {
+							development = 15
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_mcm.1 }
+				
+				}
+			
+			}
+			
+			dominate_timbuktu_mcm = {
+			
+				position = 5
+				required_missions = {saharan_expedition_mcm}
+				icon = mission_conquer_timbuktu
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1132
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					1132 = {
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1132 = {
+						trade_share = {
+						country = ROOT
+						share = 33
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					niger_bend_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					dendi_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			african_power_mcm = {
+			
+				position = 7
+				required_missions = {take_tripolitania_mcm dominate_timbuktu_mcm}
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							superregion = southern_africa_superregion
+							superregion = africa_superregion
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+					num_of_owned_provinces_with = {
+							value = 50
+							any_owned_province = {
+							same_continent = CAPITAL
+						}
+					}
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "african_power_mcm"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+}
+
+mcm_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						primary_culture = moroccan
+						NOT = {
+						
+							tag = MOR
+						
+						}
+	
+			}			
+			has_country_shield = yes	
+			
+			algiers_campaign_mcm = {
+			
+				position = 4
+				required_missions = {unite_morocco_mcm}
+				icon = mission_control_the_barbary_coast
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = algiers_area
+							area = barbary_coast_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					algiers_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					barbary_coast_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "barbary_coast_mcm"
+						duration = 7300
+					
+					}
+					
+					kabylia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					tunisia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_tunisia_mcm = {
+			
+				position = 5
+				required_missions = {algiers_campaign_mcm}
+				icon = mission_control_the_barbary_coast
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = kabylia_area
+							area = tunisia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					kabylia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					tunisia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+				effect = {
+					
+					djerba_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					tripolitania_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			take_tripolitania_mcm = {
+			
+				position = 6
+				required_missions = { conquer_tunisia_mcm }
+				icon = mission_galleys_in_port
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = djerba_area
+							area = tripolitania_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					djerba_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					tripolitania_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					cyrenaica_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					358 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			alexandrian_dominance_mcm = {
+			
+				position = 7
+				required_missions = { take_tripolitania_mcm }
+				icon = mission_occupy_alexandria
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = cyrenaica_area
+							province_id = 358
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					cyrenaica_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					358 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					358 = {	#Alexandria Node
+						trade_share = {
+						country = ROOT
+						share = 50
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					361 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					add_years_of_income = 3
+				
+				}
+				
+			}
+			
+}

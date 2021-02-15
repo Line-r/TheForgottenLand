@@ -1,0 +1,944 @@
+expansion_somalis_basic_sl5 = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MRE
+							tag = WAR
+							tag = AJU
+							tag = MDI
+							tag = SAI
+							}
+						
+						}			
+			has_country_shield = yes
+			
+			
+				somali_navy_smi = {
+				
+					position = 1
+					required_missions = {  }
+					icon = mission_galleys_in_port
+					
+					trigger = {
+					
+						navy_size_percentage = 1
+						sailors = 1500
+						num_of_admirals = 1
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "naval_enthusiasm_smi"
+							duration = 7300
+						
+						}
+						
+						1099 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+					
+					}
+			
+				}
+				
+				take_suqutra_smi = {
+				
+					position = 2
+					required_missions = {somali_navy_smi}
+					icon = mission_arabian_sea_trade
+					
+					provinces_to_highlight = {
+					
+						OR = {
+				
+							province_id = 1099
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+					trigger = {
+					
+						1099 = {
+						
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+					
+					}
+					
+					effect = {
+					
+						hadramut_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+					
+					}
+				
+				}
+				
+				conquer_hadramut_smi = {
+				
+					position = 4
+					required_missions = {take_suqutra_smi}
+					icon = mission_aragonese_navy
+					
+					provinces_to_highlight = {
+					
+						OR = {
+				
+							area = hadramut_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+					trigger = {
+					
+						hadramut_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+					
+					}
+					
+					effect = {
+					
+						yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+						upper_yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+					
+					}
+				
+				}
+				
+				conquer_yemen_smi = {
+				
+					position = 6
+					required_missions = {conquer_hadramut_smi conquer_adal_smi}
+					icon = mission_bedouins
+					
+					provinces_to_highlight = {
+					
+						OR = {
+				
+							area = asir_area
+							area = tihama_al_yemen_area
+							area = upper_yemen_area
+							area = yemen_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+					trigger = {
+					
+						tihama_al_yemen_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+						asir_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+						yemen_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+						upper_yemen_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "somali_yemen_smi"
+							duration = 7300
+						
+						}
+						
+						medina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+						mecca_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+					
+					}
+				
+				}		
+}
+
+expansion_somalis_basic_sl4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MRE
+							tag = WAR
+							tag = AJU
+							tag = MDI
+							tag = SAI
+							}
+						
+						
+						}			
+			has_country_shield = yes
+			
+			
+			somali_army_smi = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_african_soldier
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					manpower_percentage = 0.50
+					num_of_generals = 1
+				
+				}
+				
+				effect = {
+				
+					ajuuran_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+					somaliland_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+					majarteen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+				
+				}
+			
+			}
+			
+			conquer_marehan_smi = {
+			
+				position = 2
+				required_missions = { somali_army_smi }
+				icon = mission_iroquois_warriors
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							area = majarteen_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+				
+				trigger = {
+				
+					majarteen_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 50
+				
+				}
+			
+			}
+			
+			hafun_shipyards_smi = {
+			
+				position = 3
+				required_missions = { conquer_marehan_smi take_suqutra_smi }
+				icon = mission_conquer_arakan
+				
+				trigger = {
+				
+				ROOT = {
+				
+					owns_core_province = 2788
+				
+				}
+				
+					2788 = {
+					
+						OR = {
+						
+							has_building = shipyard
+							has_building = grand_shipyard
+							
+						}
+						
+						OR = {
+						
+							has_building = dock
+							has_building = drydock
+							
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					2788 = {
+					
+						add_province_modifier = {
+						
+							name = "shipyards_of_hafun_smi"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			adals_somalis_smi = {
+			
+				position = 4
+				required_missions = {somali_unity_smi}
+				icon = mission_african_trade_post
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							province_id = 1208
+							province_id = 2793
+							province_id = 1212
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+				trigger = {
+				
+					1208 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2793 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1212 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					ifat_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+					aussa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+				
+				}
+			
+			}
+			
+			conquer_adal_smi = {
+			
+				position = 5
+				required_missions = { adals_somalis_smi }
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							area = aussa_area
+							area = ifat_area
+							
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+				trigger = {
+				
+					aussa_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					ifat_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+				
+				}
+				
+				effect = {
+				
+					tihama_al_yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+						
+					asir_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+				
+				}
+					
+				
+			}
+			
+}
+
+somalialand_branch_somalis_basic_sl3 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MRE
+							tag = WAR
+							tag = AJU
+							tag = MDI
+							tag = SAI
+							}
+						
+						
+						}			
+			has_country_shield = yes
+			
+			
+			conquer_somalialand_smi = {
+			
+				position = 2
+				required_missions = { somali_army_smi }
+				icon = mission_iroquois_warriors
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							area = somaliland_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+				
+				trigger = {
+				
+					somaliland_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 50
+				
+				}
+			
+			}
+			
+			fund_a_expedition_smi = {
+			
+				position = 4
+				required_missions = {  }
+				icon = mission_claim_the_canaries
+				
+				trigger = {
+				
+					num_of_colonists = 1
+					has_flagship = yes
+					
+				}
+				
+				effect = {
+				
+					create_explorer = {
+					
+						tradition = 60
+						
+					}
+					
+					add_dip_power = 60
+				
+				}
+			
+			}
+			
+			past_ceylon_smi = {
+			
+				position = 5
+				required_missions = {fund_a_expedition_smi}
+				icon = mission_indian_empire
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							region = bengal_region
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+				
+				trigger = {
+				
+					bengal_region = {
+					
+						has_discovered = ROOT
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_treasury = 100
+				
+				}
+			
+			}
+			
+}
+
+ajuuran_branch_somalis_basic_sl2 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MRE
+							tag = WAR
+							tag = AJU
+							tag = MDI
+							tag = SAI
+							}
+						
+						
+						}			
+			has_country_shield = yes
+			
+			
+			conquer_ajuuran_smi = {
+			
+				position = 2
+				required_missions = { somali_army_smi }
+				icon = mission_iroquois_warriors
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							area = ajuuran_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+				
+				trigger = {
+				
+					ajuuran_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+				
+				}
+				
+				effect = {
+				
+					mogadishu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+						
+						}
+				
+				}
+			
+			}
+			
+		
+			
+			
+			
+			somali_unity_smi = {
+			
+				position = 3
+				required_missions = {conquer_marehan_smi conquer_somalialand_smi conquer_ajuuran_smi}
+				icon = mission_monarch_in_throne_room
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							area = ajuuran_area
+							area = majarteen_area
+							area = somaliland_area
+							area = mogadishu_area
+							province_id = 2777
+							province_id = 2774
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+					
+				trigger = {
+				
+					ajuuran_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					majarteen_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					somaliland_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					mogadishu_area = {
+						
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					2777 = {
+						
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+						
+					2774 = {
+						
+							country_or_non_sovereign_subject_holds = ROOT
+						
+						}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "somali_unity_smi"
+						duration = -1
+					
+					}
+					
+					1208 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_core = ROOT
+						
+						}
+						
+					2793 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_core = ROOT
+						
+					}
+					
+					1212 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_core = ROOT
+						
+						}
+						
+					set_country_flag = united_somalis_mission_flag
+				
+				}
+			
+			}
+			
+			colonize_other_somali_lands_smi = {
+			
+				position = 4
+				required_missions = { somali_unity_smi }
+				icon = mission_establish_mint_towns
+				
+				provinces_to_highlight = {
+					
+						OR = {
+				
+							province_id = 1207
+							province_id = 2779
+							province_id = 4052
+							province_id = 4051
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						
+				    }
+				
+				trigger = {
+				
+					1207 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2779 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					4052 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					4051 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+					add_treasury = 100
+				
+				}
+			
+			}
+			
+}
+
+dev_somalis_basic_sl1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MRE
+							tag = WAR
+							tag = AJU
+							tag = MDI
+							tag = SAI
+							}
+						
+						}			
+			has_country_shield = yes
+			
+			
+			move_capital_to_berbera_smi = {
+			
+				position = 3
+				required_missions = {conquer_somalialand_smi}
+				icon = mission_patronize_art_and_religion
+				
+				trigger = {
+				
+					ROOT = {
+					
+						owns_core_province = 1209
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1209 = {
+						
+						move_capital_effect = yes
+						rename_capital = "Magaaladasoomaaliyeed"
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 2
+						
+						add_center_of_trade_level = 1
+						
+						add_province_modifier = {
+						
+							name = "magaaladasoomaaliyeed_smi"
+							duration = -1
+						
+						}
+							
+					}
+			
+				}
+			
+			}
+			
+			qasriga_somalia_smi = {
+			
+				position = 4
+				required_missions = {move_capital_to_berbera_smi}
+				icon = mission_assert_control_over_delhi
+				
+				trigger = {
+				
+					treasury = 350
+					
+					1209 = {
+					
+						has_building = cathedral
+						development = 20
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					province_event = { id = flavor_smi.1 }
+				
+				}
+			
+			}
+			
+}

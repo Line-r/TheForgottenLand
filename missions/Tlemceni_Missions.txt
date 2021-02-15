@@ -1,0 +1,807 @@
+tlc_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TLC
+	
+			}			
+			has_country_shield = yes
+			
+			
+			find_allies_tlc = {
+			
+				position = 1
+				required_missions = { }
+				icon = mission_alliances
+				
+				trigger = {
+				
+					num_of_allies = 2
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "diplomatic_approach_tlc"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			mamluk_diplomacy_tlc = {
+			
+				position = 2
+				required_missions = { find_allies_tlc }
+				icon = mission_egyptian_mamluk_soldier
+				
+				trigger = {
+				
+					MAM = {
+					
+						OR = {
+							AND = {
+									MAM = {
+										has_opinion = {
+											who = ROOT
+											value = 100
+									}
+								}
+								
+							}
+								
+								alliance_with = MAM
+						}
+						
+					}
+				
+				}
+				
+				effect = {
+						
+						country_event = { id = flavor_tlc.1 }
+				
+				}
+			
+			}
+			
+			conquer_tunisia_tlc = {
+			
+				position = 4
+				required_missions = {mamluk_diplomacy_tlc}
+				icon = mission_conquer_tunis
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = tunisia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					tunisia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "tunisian_conquest_tlc"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+}
+
+tlc_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TLC
+	
+			}			
+			has_country_shield = yes
+			
+			
+			build_up_a_naval_force_tlc = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_galleys_in_port
+				
+				trigger = {
+				
+					navy_size_percentage = 0.75
+					num_of_admirals = 1
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "tlemceni_pirates_tlc"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+			raid_tunisia_tlc = {
+			
+				position = 2
+				required_missions = { build_up_a_naval_force_tlc }
+				icon = mission_raid_on_genoa
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 341
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					341 = {
+					
+						NOT = {
+						
+							is_core = ROOT
+						
+						}
+						
+						owned_by = ROOT
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_tlc.2 }
+				
+				}
+			
+			}
+			
+			army_of_veterans_tlc = {
+			
+				position = 3
+				required_missions = {moroccan_war_tlc raid_tunisia_tlc}
+				icon = mission_establish_the_black_guard
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					army_size = 30000
+					navy_size_percentage = 1
+					navy_size = 50
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "professional_army_tlc"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+			raid_italy_tlc = {
+			
+				position = 5
+				required_missions = { safi_trade_tlc conquer_tunisia_tlc }
+				icon = mission_raid_on_venice
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 10
+						region = italy_region
+					}
+				
+				}
+				
+				effect = {
+				
+					101 = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					add_country_modifier = {
+					
+						name = "italian_raids_tlc"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+tlc_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TLC
+	
+			}			
+			has_country_shield = yes
+			
+			
+			support_moroccan_subjects_tlc = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_moroccan_ports
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 343
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					limit = {
+					
+						OR = {
+						
+							exists = MRK
+							exists = FEZ
+							exists = TFL
+							exists = SOS
+							exists = TET
+						
+						}
+					
+					}
+					
+					OR = {
+					
+						MRK = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						
+						FEZ = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						
+						TFL = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						
+						SOS = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						
+						TET = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					if = {
+					
+						limit = {
+						
+							OR = {
+								exists = MRK
+								exists = FEZ
+								exists = TFL
+								exists = SOS
+								exists = TET
+							}
+					
+						}
+						
+						MRK = {
+						
+							add_country_modifier = {
+							
+								name = "angry_subjects_tlc"
+								duration = 14600
+							
+							}
+						
+						}
+						
+						FEZ = {
+						
+							add_country_modifier = {
+							
+								name = "angry_subjects_tlc"
+								duration = 14600
+							
+							}
+						
+						}
+						
+						TFL = {
+						
+							add_country_modifier = {
+							
+								name = "angry_subjects_tlc"
+								duration = 14600
+							
+							}
+						
+						}
+							
+						SOS = {
+						
+							add_country_modifier = {
+							
+								name = "angry_subjects_tlc"
+								duration = 14600
+							
+							}
+						
+						}
+						
+						TET = {
+						
+							add_country_modifier = {
+							
+								name = "angry_subjects_tlc"
+								duration = 14600
+							
+							}
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			moroccan_war_tlc = {
+			
+				position = 2
+				required_missions = { support_moroccan_subjects_tlc }
+				icon = mission_assert_control_over_delhi
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							limit = { owned_by = MOR }
+				
+						}
+				}
+				
+				trigger = {
+				
+					is_in_war = {
+						participants = MOR, TLC
+					}
+				
+				}
+				
+				effect = {
+				
+					marrekesh_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			control_fez_tlc = {
+			
+				position = 3
+				required_missions = {moroccan_war_tlc}
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = marrekesh_area
+				
+						}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					marrekesh_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					northern_morocco_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					western_morocco_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					southern_morocco_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+
+					tafilalt_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					sus_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					add_country_modifier = {
+					
+						name = "control_fez_tlc"
+						duration = 7300 
+					
+					}
+				
+				}
+			
+			}
+			
+			safi_trade_tlc = {
+			
+				position = 4
+				required_missions = { control_fez_tlc }
+				icon = dominant_economy
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1110
+				
+						}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					1110 = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 1
+				
+				}
+			
+			}
+			
+}
+
+tlc_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TLC
+	
+			}			
+			has_country_shield = yes
+			
+			
+			raid_foreign_commerce_tlc = {
+			
+				position = 1
+				required_missions = { }
+				icon = mission_african_gold
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1298
+				
+						}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					1298 = { #Genoa
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "rading_genoa_tlc"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			textile_industry_tlc = {
+			
+				position = 3
+				required_missions = {raid_foreign_commerce_tlc}
+				icon = mission_expand_textile_industry
+				
+				trigger = {
+
+					textile = 5
+					plantations = 5
+				
+				}
+				
+				effect = {
+					
+					add_country_modifier = {
+					
+						name = "tlemceni_textiles_tlc"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+			trans_saharan_trade_tlc = {
+			
+				position = 4
+				required_missions = { }
+				icon = mission_bedouins
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1132
+							province_id = 1149
+				
+						}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					OR = {
+				
+						has_discovered = 1132
+						has_discovered = 1149
+					
+					}
+					
+					OR = {
+					
+						1132 = { #Timbuktu
+						trade_share = {
+							country = ROOT
+							share = 15
+							}
+						}
+						
+						1149 = { #Katsina
+						trade_share = {
+							country = ROOT
+							share = 15
+							}
+						}
+					
+					}
+					
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "trans_saharan_trade_tlc"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+tlc_slot_5 = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TLC
+	
+			}			
+			has_country_shield = yes
+			
+			develop_tala_imsan_tlc = {
+			
+				position = 1
+				required_missions = { }
+				icon = mission_asian_trader
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 336
+				
+					}
+				}
+				
+				trigger = {
+				
+					336 = {
+					
+						development = 25
+						has_building = fort_15th
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					algiers_area = {
+					
+						add_prosperity = 25
+					
+					}
+				
+				}
+			
+			}
+			
+			great_mosque_of_tala_imsan_tlc = {
+			
+				position = 3
+				required_missions = { develop_tala_imsan_tlc }
+				icon = mission_el_badi_palace
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 336
+				
+					}
+				}
+				
+				trigger = {
+				
+					336 = {
+					
+						development = 30
+						has_building = fort_16th
+						
+						OR = {
+						
+							has_building = temple
+							has_building = cathedral
+						
+						}
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					336 = {
+					
+						add_province_modifier = {
+						
+							name = "palace_of_tala_imsan_tlc"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			
+	}

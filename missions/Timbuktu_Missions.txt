@@ -1,0 +1,1365 @@
+tmb_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TMB
+	
+			}			
+			has_country_shield = yes
+
+			anihilate_massina_tmb = {
+			
+				position = 2
+				required_missions = {raise_an_army_tmb}
+				icon = mission_invade_kanem
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 2260
+						province_id = 1131
+						province_id = 1123
+						area = baghena_area
+						area = wagadu_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					wagadu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					baghena_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2260 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1131 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1123 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "massina_defeated_tmb"
+						duration = 7300
+					
+					}
+					
+					massina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			mali_border_tmb = {
+			
+				position = 3
+				required_missions = {anihilate_massina_tmb}
+				icon = mission_arabian_fort
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = massina_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					massina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					manding_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					kong_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			defeat_the_crumbling_empire_tmb = {
+			
+				position = 4
+				required_missions = {mali_border_tmb}
+				icon = mission_invade_mali
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = manding_area
+						area = kong_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					manding_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					kong_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "mali_defeated_tmb"
+						duration = 14600
+					
+					}
+					
+					tekrur_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			pacify_the_fulani_tmb = {
+			
+				position = 5
+				required_missions = {defeat_the_crumbling_empire_tmb}
+				icon = mission_marwari_horses
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = tekrur_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					tekrur_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "pacified_fulo_tmb"
+						duration = 5475
+					
+					}
+					
+					futa_jallon_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					jolof_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+
+					cayor_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			dreams_of_coastline_tmb = {
+			
+				position = 6
+				required_missions = {pacify_the_fulani_tmb}
+				icon = mission_establish_high_seas_navy
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = futa_jallon_area
+						area = jolof_area
+						area = cayor_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					futa_jallon_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					jolof_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					cayor_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "timbuktu_on_coast_tmb"
+						duration = 14600
+					
+					}
+					
+					add_dip_power = 100
+				
+				}
+			
+			}
+
+}
+
+tmb_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TMB
+	
+			}			
+			has_country_shield = yes
+			
+			raise_an_army_tmb = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_assemble_an_army
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					manpower_percentage = 0.75
+				
+				}
+				
+				effect = {
+				
+					niger_bend_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					jenne_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					wagadu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					baghena_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1131 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1123 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+				
+			}
+			
+			march_into_gao = {
+			
+				position = 2
+				required_missions = {raise_an_army_tmb}
+				icon = mission_conquer_timbuktu
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1133
+						province_id = 2264
+						province_id = 2262
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					1133 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2264 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2262 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "conquest_of_gao_tmb"
+						duration = 5475
+					
+					}
+					
+					tadmekka_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					dendi_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			defeat_songhai_tmb = {
+			
+				position = 3
+				required_missions = {march_into_gao}
+				icon = mission_african_soldier
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = tadmekka_area
+						area = dendi_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					NOT = {
+					
+						exists = SON
+					
+					}
+					
+					ROOT = {
+					
+						owns_core_province = 1133
+					
+					}
+				
+					tadmekka_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					dendi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 33
+					add_mil_power = 100
+					
+					zazzau_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					hausa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					katsina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			hausan_campaign_tmb = {
+			
+				position = 4
+				required_missions = {defeat_songhai_tmb}
+				icon = mission_consume_the_baghels
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = zazzau_area
+						area = hausa_area
+						area = katsina_area
+						
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					zazzau_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					hausa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					katsina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "hausan_merchants_tmb"
+						duration = 7300
+					
+					}
+					
+					azbin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					east_azbin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+				
+			}
+			
+			the_sultan_of_air_tmb = {
+			
+				position = 5
+				required_missions = {hausan_campaign_tmb}
+				icon = mission_al-wadi_al-kabir
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = azbin_area
+						area = east_azbin_area
+						
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					azbin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					east_azbin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "tuareg_unity_tmb"
+						duration = -1
+					
+					}
+					
+					bornu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					kanem_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_kanem_tmb = {
+			
+				position = 6
+				required_missions = {the_sultan_of_air_tmb}
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = kanem_area
+						area = bornu_area
+				
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					bornu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					kanem_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					bornu_area = {
+					
+						limit = {country_or_non_sovereign_subject_holds = ROOT}
+						add_province_modifier = {
+						
+							name = "riches_of_kanembornu"
+							duration = 14600
+						
+						}
+					
+					}
+					
+					kanem_area = {
+					
+						limit = {country_or_non_sovereign_subject_holds = ROOT}
+						add_province_modifier = {
+						
+							name = "riches_of_kanembornu"
+							duration = 14600
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			the_timbuktu_empire_tmb = {
+			
+				position = 7
+				required_missions = {dreams_of_coastline_tmb vanquish_benin_tmb conquer_kanem_tmb}
+				icon = mission_empire
+				
+				trigger = {
+					
+					adm_power = 200
+					dip_power = 200
+					mil_power = 200
+					total_development = 700
+				
+				}
+				
+				effect = {
+				
+					if = {
+						limit = {
+							NOT = {
+								government_rank = 3
+							}
+						}
+						set_government_rank = 3
+					}
+				
+					add_country_modifier = {
+					
+						name = "timbuktu_empire_tmb"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+
+}
+
+tmb_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TMB
+	
+			}			
+			has_country_shield = yes
+			
+			great_city_of_jenne_tmb = {
+			
+				position = 2
+				required_missions = {raise_an_army_tmb}
+				icon = mission_into_africa
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = jenne_area
+				
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					jenne_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 50
+				
+					upper_volta_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1143 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			subdue_the_mossi_tmb = {
+			
+				position = 3
+				required_missions = {great_city_of_jenne_tmb march_into_gao}
+				icon = mission_iroquois_warriors
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = upper_volta_area
+						province_id = 1143
+				
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					upper_volta_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1143 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "mossi_subdued_tmb"
+						duration = 7300
+					
+					}
+					
+					lower_volta_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					atacora_oueme_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					lower_niger_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			assimilate_the_southern_tribes_tmb = {
+			
+				position = 4
+				required_missions = {subdue_the_mossi_tmb}
+				icon = mission_crusade_for_varna
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = lower_volta_area
+						area = atacora_oueme_area
+						area = lower_niger_area
+				
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					lower_niger_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					atacora_oueme_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					lower_niger_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 200
+					benin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			vanquish_benin_tmb = {
+			
+				position = 6
+				required_missions = {assimilate_the_southern_tribes_tmb}
+				icon = mission_conquer_benin
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = benin_area
+				
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					benin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 50
+				
+				}
+			
+			}
+
+}
+
+tmb_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TMB
+	
+			}			
+			has_country_shield = yes
+			
+			develop_timbuktu_tmb = {
+			
+				position = 1
+				required_missions = { }
+				icon = mission_city_of_victory_vij
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1132 = {
+					
+						development = 25
+						feudalism = 100
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+					add_dip_power = 100
+					add_mil_power = 100
+					1132 = {
+					
+						add_base_manpower = 4
+					
+					}
+				
+				}
+			
+			}
+			
+			city_of_universities_tmb = {
+			
+				position = 3
+				required_missions = {develop_timbuktu_tmb}
+				icon = mission_early_modern_university
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1132 = {
+					
+						has_building = university
+						renaissance = 100
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "center_of_scholarly_tmb"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			salt_monopoly_tmb = {
+			
+				position = 4
+				required_missions = { }
+				icon = mission_rb_monopolize_the_channel
+				
+				trigger = {
+				
+					trading_part = {
+					
+						trade_goods = salt
+						value = 0.10
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "salt_monopoly_mdf_tmb"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+			glass_of_ife_tmb = {
+			
+				position = 5
+				required_missions = {assimilate_the_southern_tribes_tmb}
+				icon = bohemian_crystal
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1146
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1146 = {
+					
+						development = 15
+						has_building = workshop
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1146 = {
+					
+						add_province_modifier = {
+						
+							name = "glass_of_ife_mdf_tmb"
+							duration = -1
+						
+						}
+						
+					}
+				
+				}
+			
+			}
+			
+}
+
+tmb_slot_5 = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = TMB
+	
+			}			
+			has_country_shield = yes
+			
+			avoiding_desertification_based_tmb = {
+			
+				position = 2
+				required_missions = {develop_timbuktu_tmb}
+				icon = mission_conquer_air
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1132 = {
+					
+						has_building = fort_16th
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1132 = {
+					
+						add_province_modifier = {
+						
+							name = "avoided_desertification_tmb"
+							duration = -1
+						
+						}
+						
+					}
+				
+				}
+			
+			}
+			
+			mosuqe_of_timbutktu_tmb = {
+			
+				position = 3
+				required_missions = { }
+				icon = mission_mosque
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1132 = {
+					
+						has_building = temple
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 10
+					add_dip_power = 50
+					add_adm_power = 50
+				
+				}
+			
+			}
+			
+			a_holy_city_tmb = {
+			
+				position = 4
+				required_missions = {mosuqe_of_timbutktu_tmb}
+				icon = mission_hands_praying
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					piety = 0.75
+					1132 = {
+					
+						has_building = cathedral
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1132 = {
+					
+						add_province_modifier = {
+						
+							name = "holy_cities_tmb"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			protect_home_commerce_tmb = {
+			
+				position = 5
+				required_missions = { salt_monopoly_tmb }
+				icon = dominant_economy
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1132
+				
+					}
+					
+				}
+				
+				trigger = {
+				
+					1132 = {
+						trade_share = {
+							country = ROOT
+							share = 75
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 3
+				
+				}
+			
+			}
+			
+}

@@ -1,0 +1,6 @@
+government = theocracy
+add_government_reform = alexandrian_patriarchate_reform
+primary_culture = tigray
+religion = coptic
+technology_group = east_african
+unit_type = sub_saharan

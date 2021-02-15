@@ -1,0 +1,91 @@
+namespace = flavor_mcm
+normal_or_historical_nations = yes
+
+country_event = { #The Sharan Expedition
+
+	id = flavor_mcm.1
+	title = flavor_mcm.1.t
+	desc = flavor_mcm.1.d
+	picture = EXPLORERS_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+	
+		name = "flavor_mcm.1.a"
+		
+		if = {
+		
+			limit = {
+			
+				1127 = {
+				
+					NOT = {	is_city = yes }
+				
+				}
+			
+			}
+			
+			1127 = {
+		
+				cede_province = ROOT
+				add_core = ROOT
+			
+			}
+			
+			create_conquistador = {
+				tradition = 10
+			}
+			
+			dendi_area = {
+			discover_country = ROOT
+			}
+			
+			western_sahara_area = {
+				discover_country = ROOT
+			}
+			
+			niger_bend_area = {
+				discover_country = ROOT
+			}
+		
+		}
+		
+		if = {
+		
+			limit = {
+			
+				1127 = {
+				
+					is_city = yes
+				
+				}
+			
+			}
+			
+			add_prestige = -5
+		
+		}
+		
+	}
+	
+	option = {
+	
+		name = "flavor_mcm.1.b"
+		
+		create_conquistador = {
+				tradition = 80
+		}
+		
+	}
+	
+	option = {
+	
+		name = "flavor_mcm.1.c"
+		
+		add_prestige = -5
+		
+	}
+
+}

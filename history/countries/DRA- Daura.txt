@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = hausan_trading_kingdom_reform
+primary_culture = hausa
+religion = sunni
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 2279	
+religious_school = maliki_school
+
+#Kings of Daura. Only 1778-later rulers are known.
+
+1444.1.1 = {
+	monarch = {
+		name = "Tribal Council"
+		dip = 1
+		adm = 1
+		mil = 1
+		regent = yes
+	}
+}
+
+1778.1.1 = {
+	monarch = {
+		name = "Sarkin Gwari Abdu"
+		dip = 0
+		adm = 1
+		mil = 0
+	}
+}
+

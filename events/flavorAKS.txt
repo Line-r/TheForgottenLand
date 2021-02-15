@@ -1,0 +1,54 @@
+namespace = flavor_aks
+normal_or_historical_nations = yes
+
+country_event = {
+
+	id = flavor_aks.1
+	title = "flavor_aks.1.t"
+	desc = "flavor_aks.1.d"
+	
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+	
+		name = "flavor_aks.1.d1"
+		
+			358 = {
+				cede_province = POA
+				add_core = POA
+				change_religion = coptic
+			}
+			
+			hidden_effect = {
+				358 = {
+					if = {
+						limit = {
+							exists = MAM
+						}
+						remove_core = MAM
+					}
+					
+				}
+			}
+			
+			ROOT = {
+					vassalize = POA
+				}
+			
+		
+		}
+		
+		option = {
+		
+			name = "flavor_aks.1.d2"
+			
+			add_adm_power = 50
+		
+		}
+		
+	
+	}

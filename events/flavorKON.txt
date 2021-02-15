@@ -1,0 +1,154 @@
+namespace = toe_flavor_kon_kongo
+
+
+country_event = {
+
+	id = toe_flavor_kon_kongo.1
+	title = toe_flavor_kon_kongo_1_t
+	desc = toe_flavor_kon_kongo_1_d
+	
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "TOEFLAVORKON1.a"
+		
+		trigger = {
+			
+			4020 = {
+			
+				is_city = no
+				is_colony = no
+			
+				}
+			
+			}
+			add_treasury = -150
+			4020 = {
+			
+				cede_province = KON
+			
+			}
+		
+		
+		}
+		
+	option = {
+		name = "TOEFLAVORKON1.b"
+		
+		trigger = {
+			
+			4020 = {
+			
+				is_city = yes
+			
+				}
+			
+			}
+			add_prestige = -10
+	
+	
+	}
+
+}
+
+country_event = {
+
+	id = toe_flavor_kon_kongo.2
+	title = toe_flavor_kon_kongo_2_t
+	desc = toe_flavor_kon_kongo_2_d
+	
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "TOEFLAVORKON2.a"
+		
+		trigger = {
+		
+		1167 = {
+			
+				is_city = no
+				is_colony = no
+			
+				}
+				
+		1172 = {
+			
+				is_city = no
+				is_colony = no
+			
+				}
+				
+			}
+		add_treasury = -300
+		1167 = {
+			
+			cede_province = KON
+			
+		}
+		
+		1172 = {
+			
+			cede_province = KON
+			
+		}
+	
+	
+	}
+	
+	option = {
+		name = "TOEFLAVORKON2.b"
+
+		trigger = {
+
+		1167 = {
+			
+				is_city = yes
+				is_colony = yes
+			
+				}
+				
+		1172 = {
+			
+				is_city = yes
+				is_colony = yes
+			
+				}
+				
+			}
+				add_prestige = -25
+				
+				
+				
+	}
+	
+	option = {
+		name = "TOEFLAVORKON2.c"	
+		
+		trigger = {
+		
+			1167 = {
+		
+				country_or_non_sovereign_subject_holds = ROOT
+		
+			}
+		
+			1172 = {
+		
+				country_or_non_sovereign_subject_holds = ROOT
+		
+			}
+			
+		}
+		
+		add_prestige = 15
+		
+	}
+			
+
+}

@@ -1,0 +1,1109 @@
+mal_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MAL
+	
+			}			
+			has_country_shield = yes
+			
+			end_army_corruption_mal = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_new_army
+				
+				trigger = {
+				
+					manpower_percentage = 0.75
+				
+				}
+				
+				effect = {
+				
+					add_mil_power = 25
+				
+				}
+			
+			}
+			
+			retake_massina_mal = {
+			
+				position = 3
+				required_missions = {restore_the_army_mal}
+				icon = mission_african_soldier
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = wagadu_area
+						area = massina_area
+						area = jenne_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					wagadu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					massina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					jenne_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					baghena_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1132 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					4792 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1129 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1128 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			absorb_timbuktu_mal = {
+			
+				position = 4
+				required_missions = {retake_massina_mal}
+				icon = mission_conquer_timbuktu
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = baghena_area
+						province_id = 1132
+						province_id = 4792
+						province_id = 1129
+						province_id = 1128
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					baghena_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1132 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					4792 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1129 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1128 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1132 = {
+					
+						add_trade_modifier = {
+							 who = ROOT
+							 duration = 14600
+							 power = 33
+							 key = mali_conquer_tmimbuktu_mal
+						}
+						
+					}
+					
+					2262 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					2264 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					1133 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			gao_reconquest_mal = {
+			
+				position = 5
+				required_missions = {absorb_timbuktu_mal}
+				icon = mission_the_songhai_campaign
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 2262
+						province_id = 2264
+						province_id = 1133
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+					
+					2262 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2264 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1133 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "gao_reconquered_mal"
+						duration = 7300
+					
+					}
+					
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 33
+					}
+				
+				}
+			
+			}
+			
+			sahel_desert_mal = {
+			
+				position = 7
+				required_missions = {the_empire_restored_mal}
+				icon = mission_bedouins
+			
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						region = sahel_region
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					sahel_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				}
+				
+				effect = {
+				
+					add_army_tradition = 33
+				
+				}
+			
+			}
+			
+}
+
+mal_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MAL
+	
+			}			
+			has_country_shield = yes
+			
+			new_officers_mal = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_chinese_general_riding
+				
+				trigger = {
+				
+					num_of_generals = 2
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "new_era_of_generals_mal"
+						duration = 7300
+					
+					}
+				
+				}
+				
+			
+			}
+			
+			restore_the_army_mal = {
+			
+				position = 2
+				required_missions = {new_officers_mal stop_the_decay_mal end_army_corruption_mal}
+				icon = mission_establish_the_black_guard
+				
+				trigger = {
+				
+					num_of_mercenaries = 0
+					army_size_percentage = 1
+					num_of_generals = 3
+					manpower_percentage = 0.80
+				
+				}
+				
+				effect = {
+				
+					add_stability = 1
+					
+					wagadu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+						add_core = ROOT
+						
+					}
+						
+					massina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+						add_core = ROOT
+				
+					}
+					
+					jenne_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+						add_core = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			integrate_the_fulani_mal = {
+			
+				position = 4
+				required_missions = {restore_the_army_mal end_the_jolof_mal}
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = tekrur_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					tekrur_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "subdued_fulo_kingdom_mal"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			the_empire_restored_mal = {
+			
+				position = 6
+				required_missions = {integrate_the_fulani_mal gao_reconquest_mal}
+				icon = mission_invade_mali
+				
+				trigger = {
+				
+					adm_power = 500
+					stability = 2
+				
+				}
+				
+				effect = {
+				
+					if = {
+						limit = {
+							NOT = {
+								government_rank = 3
+							}
+						}
+						set_government_rank = 3
+					}
+				
+					add_country_modifier = {
+					
+						name = "mali_empire_mal"
+						duration = -1
+					
+					}
+					
+					niger_region = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					sahel_region = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			dominate_the_niger_mal = {
+			
+				position = 7
+				required_missions = {the_empire_restored_mal}
+				icon = mission_arabian_fort
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						region = niger_region
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					niger_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				}
+				
+				effect = {
+				
+					add_years_of_income = 3
+					add_country_modifier = {
+					
+						name = "niger_conquered_mal"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			
+			
+}
+
+mal_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MAL
+	
+			}			
+			has_country_shield = yes
+			
+			stop_the_decay_mal = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_assemble_an_army
+				
+				trigger = {
+				
+					army_size_percentage = 1
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 15
+				
+				}
+			
+			}
+			
+			naval_force_mal = {
+			
+				position = 2
+				required_missions = {}
+				icon = imperial_navy
+				
+				trigger = {
+				
+					navy_size_percentage = 1
+				
+				}
+				
+				effect = {
+				
+					add_navy_tradition = 10
+				
+				}
+			
+			}
+			
+			end_the_jolof_mal = {
+			
+				position = 3
+				required_missions = {naval_force_mal restore_the_army_mal}
+				icon = mission_invade_kanem
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = cayor_area
+						area = jolof_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					cayor_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					jolof_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "jolof_subdued_mal"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			a_new_world_questionmark_mal = {
+			
+				position = 4
+				required_missions = {end_the_jolof_mal}
+				icon = mission_establish_high_seas_navy
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						colonial_region = colonial_brazil
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					colonial_brazil = {
+						has_discovered = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "colonial_enthusiasm_mal"
+						duration = 5475
+					
+					}
+				
+				}
+			
+			}
+			
+			explore_brazil_mal = {
+			
+				position = 5
+				required_missions = {a_new_world_questionmark_mal}
+				icon = colonize_brazil
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						colonial_region = colonial_brazil
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 1
+						colonial_region = colonial_brazil
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					create_conquistador = {
+						tradition = 50	
+					}
+				
+				}
+				
+			
+			}
+			
+			colonize_brazil_mal = {
+			
+				position = 6
+				required_missions = {explore_brazil_mal}
+				icon = mission_colonial
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						colonial_region = colonial_brazil
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						colonial_region = colonial_brazil
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 3
+				
+				}
+			
+			}
+			
+			establish_la_plata_mal = {
+			
+				position = 7
+				required_missions = {colonize_brazil_mal}
+				icon = mission_brazilian_bandeirantes
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						colonial_region = colonial_la_plata
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						colonial_region = colonial_la_plata
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "la_plata_mal"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+mal_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MAL
+	
+			}			
+			has_country_shield = yes
+			
+			end_past_instability_mal = {
+			
+				position = 1
+				required_missions = {}
+				icon = balance_the_estates
+				
+				trigger = {
+				
+					stability = 2
+					num_of_rebel_controlled_provinces = 0
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+				
+				}
+			
+			}
+			
+			a_great_ruler_mal = {
+			
+				position = 2
+				required_missions = {end_past_instability_mal}
+				icon = king_of_kings
+				
+				trigger = {
+				
+					OR = {
+					
+						dip = 6
+						mil = 6
+						adm = 6
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_stability = 1
+					add_prestige = 10
+				
+				}
+			
+			}
+			
+			settle_guinea_mam = {
+			
+				position = 4
+				required_missions = {end_the_jolof_mal}
+				icon = mission_settlers_north_america
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = guinea_coast_area
+						area = west_africa_coast_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					guinea_coast_area = {
+						is_city = yes
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					west_africa_coast_area = {
+						is_city = yes
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 1
+					
+					1466 = {
+					
+						add_trade_modifier = {
+							 who = ROOT
+							 duration = 14600
+							 power = 33
+							 key = mali_guinea_mal
+						}
+						
+					}
+				
+				}
+			
+			}
+			
+			demolish_benin_mal = {
+			
+				position = 5
+				required_missions = {settle_guinea_mam}
+				icon = mission_conquer_benin
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						area = benin_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					benin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				}
+				
+				effect = {
+				
+					add_mil_power = 75
+					add_prestige = 25
+				
+				}
+			
+			}
+			
+			colombian_riches_mam = {
+			
+				position = 7
+				required_missions = {colonize_brazil_mal}
+				icon = dominant_economy
+				
+				provinces_to_highlight = {
+					colonial_region = colonial_colombia
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+
+				trigger = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						colonial_region = colonial_colombia
+						is_city = yes
+					}
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "riches_of_colombia_mal"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+mal_slot_5 = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = MAL
+	
+			}			
+			has_country_shield = yes
+
+			leave_the_feudal_era_mal = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_restore_faith_in_the_throne
+			
+				trigger = {
+							AND = {
+								NOT = {
+										
+									current_age = age_of_discovery
+										
+								}
+										
+								has_institution = feudalism
+								has_institution = renaissance
+								
+							}
+					
+				}
+				
+				effect = {
+				
+					add_mil_power = 75
+					add_dip_power = 75
+					add_adm_power = 75
+				
+				}
+				
+			}
+			
+			joma_dominates_mal = {
+			
+				position = 3
+				required_missions = {}
+				icon = mission_the_songhai_campaign
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1124
+						
+					}
+				
+				}
+				
+				trigger = {
+				
+					1124 = {
+					
+						development = 30
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					1124 = {
+					
+						add_province_modifier = {
+						
+							name = "great_city_mal"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			court_of_law_mal = {
+			
+				position = 4
+				required_missions = {joma_dominates_mal}
+				icon = mission_early_modern_university
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1124
+						
+					}
+					
+				}
+				
+				trigger = {
+				
+					1124 = {
+					
+						has_building = courthouse
+						has_building = university
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "court_of_law_mal"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+				
+}

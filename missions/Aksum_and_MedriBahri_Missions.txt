@@ -1,0 +1,1526 @@
+aksum_nubia_branch = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = MED
+						tag = AKS
+					}
+						
+			}			
+			has_country_shield = yes
+			
+				the_best_defense_aks = {
+				
+					position = 1
+					required_missions = {  }
+					icon = mission_conquer_50_development
+					
+					trigger = {
+					
+						army_size_percentage = 1
+						manpower_percentage = 0.75
+						
+					
+					}
+					
+					effect = {
+					
+						upper_nubia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+						
+						2799 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+						
+						4033 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+					
+					}
+					
+				}
+	
+				conquer_soba_aks = {
+				
+					position = 2
+					required_missions = {the_best_defense_aks}
+					icon = mission_african_trade_post
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = upper_nubia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						upper_nubia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						dongola_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+					
+					}
+				
+				}
+				
+				conquer_sennar_aks = {
+				
+					position = 3
+					required_missions = {conquer_soba_aks}
+					icon = mission_bedouins
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 2799
+							province_id = 4033
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						2799 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4033 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "exploration_spirit_aks"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+				
+				colonize_missions_aks = {
+				
+					position = 4
+					required_missions = {conquer_sennar_aks}
+					icon = mission_colonial
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1217
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						1217 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_treausry = 100
+						
+						1217 = {
+						
+							add_base_production = 3
+							add_center_of_trade_level = 1
+						
+						}
+					
+					}
+				
+				}	
+}
+			
+aksum_north_nubia_branch = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = MED
+						tag = AKS
+					}
+						
+						}			
+			has_country_shield = yes
+			
+			
+			conquer_dongola_aks = {
+			
+				position = 3
+				required_missions = {conquer_soba_aks}
+				icon = mission_invade_kanem
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = dongola_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					dongola_area = {
+					
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					dongola_area = {
+						limit = { 
+							NOT = { religion = coptic } 
+							owned_by = ROOT
+						}
+						add_province_modifier = {
+						
+							name = "dongola_coptic_zealousness_aks"
+							duration = 7300
+						
+						}
+					}
+					
+					lower_nubia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			conquer_qasr_ibrim_aks = {
+			
+				position = 4
+				required_missions = { conquer_dongola_aks }
+				icon = mission_european_church
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = lower_nubia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					lower_nubia_area = {
+					
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					
+					}
+					
+				}
+				
+				effect = {
+				
+					lower_nubia_area = {
+						limit = { 
+							NOT = { religion = coptic } 
+							owned_by = ROOT
+						}
+						add_province_modifier = {
+						
+							name = "qasr_ibrim_aks"
+							duration = 7300
+						
+						}
+					}
+					
+					1234 = {
+					
+						add_base_manpower = 2
+						ass_base_tax = 2
+					
+					}
+					
+					1232 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+						
+					2324 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+						
+					said_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+}
+
+
+aksum_tigray_homeland_branch = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MED
+							tag = AKS
+							}
+						
+						}			
+			has_country_shield = yes
+			
+				
+				defend_the_homeland_aks = {
+				
+					position = 1
+					required_missions = {  }
+					icon = mission_build_up_to_force_limit
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 2766
+							province_id = 2787
+							province_id = 1230
+				
+						}
+					}
+					
+					trigger = {
+					
+						OR = {
+						
+							2766 = {
+							
+								has_building = fort_15th
+							
+							}
+							
+							1230 = {
+							
+								has_building = fort_15th
+							
+							}
+							
+							2787 = {
+							
+								has_building = fort_15th
+							
+							}
+						
+						}
+					
+					}
+					
+					effect = {
+					
+						1227 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+						
+						2767 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_core = ROOT
+				
+						}
+					
+					}
+				
+				}
+				
+				unite_with_aksum_aks = {
+				
+					position = 2
+					required_missions = { defend_the_homeland_aks }
+					icon = mission_invade_island
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1227
+							province_id = 2767
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						1227 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						2767 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "aksum_retaken_aks"
+							duration = 14600
+						
+						}
+					
+						2771 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+						
+						central_ethiopia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+					
+					}
+				
+				}
+				
+				the_ancient_cities_aks = {
+				
+					position = 3
+					required_missions = { unite_with_aksum_aks }
+					icon = mission_african_soldier
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = central_ethiopia_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						central_ethiopia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						2771 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						damot_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+						
+						shewa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+						
+						hadiya_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+						
+						southern_ethiopia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+						
+						aussa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+					
+					}
+				
+				}
+				
+				unite_ethiopia_aks = {
+				
+					position = 4
+					required_missions = { the_ancient_cities_aks }
+					icon = mission_crusade_for_varna
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = southern_ethiopia_area
+							area = shewa_area
+							area = hadiya_area
+							area = damot_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						southern_ethiopia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						shewa_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						hadiya_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+
+						damot_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "unity_with_ethiopia_aks"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			
+aksum_arabia_adal_branch = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = MED
+						tag = AKS
+					}
+						
+			}			
+			has_country_shield = yes
+			
+			
+			conquer_aussa_aks = {
+			
+				position = 4
+				required_missions = {the_ancient_cities_aks}
+				icon = mission_galleys_in_port
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = aussa_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					aussa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					397 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+				
+				}
+			
+			}
+			
+			control_the_strait_aks = {
+			
+				position = 5
+				required_missions = {conquer_aussa_aks}
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 387
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					387 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+						}
+			
+				}
+			
+			}
+			
+			conquer_aden_aks = {
+			
+				position = 6
+				required_missions = {control_the_strait_aks}
+				icon = mission_conquer_aden
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = yemen_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					yemen_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					hadramut_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					tihama_al_yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					asir_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+			conquer_hadramut_aks = {
+			
+				position = 7
+				required_missions = {conquer_aden_aks}
+				icon = mission_bedouins
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = hadramut_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					hadramut_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_treasury = 50
+					
+					2999 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					dhofar_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+		take_dhofar_hormuz_aks = {
+		
+			position = 8
+			required_missions = {conquer_hadramut_aks}
+			icon = mission_portuguese_oman
+				
+			provinces_to_highlight = {
+					OR = {
+			
+						area = mascat_area
+						province_id = 2999
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+					
+			trigger = {
+				
+				mascat_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				
+				2999 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				
+			}
+			
+			effect = {
+			
+				bahrain_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+			
+			}
+		
+		}
+}
+
+aksum_dev_nubia_branch = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = AKS
+					}
+						
+			}
+			
+			has_country_shield = yes
+
+			develop_dongola_aks = {
+			
+				position = 5
+				required_missions = {conquer_qasr_ibrim_aks}
+				icon = mission_conquer_air
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = dongola_area
+				
+						}
+					}
+					
+				trigger = {
+				
+					development_in_provinces = {
+						value = 20
+						area = dongola_area
+					}
+				
+				}
+				
+				effect = {
+				
+					dongola_area = {
+						limit = { 
+							owned_by = ROOT
+						}
+						add_province_modifier = {
+						
+							name = "rough_terrain_surpassed_aks"
+							duration = -1
+						
+						}
+					}
+				
+				}
+			
+			}
+			
+			develop_qasr_ibrim_aks = {
+			
+				position = 6
+				required_missions = {develop_dongola_aks}
+				icon = mission_conquer_air
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = lower_nubia_area
+				
+						}
+					}
+					
+				trigger = {
+				
+					development_in_provinces = {
+						value = 20
+						area = lower_nubia_area
+					}
+				
+				}
+				
+				effect = {
+				
+					lower_nubia_area = {
+						limit = { 
+							owned_by = ROOT
+						}
+						add_province_modifier = {
+						
+							name = "rough_terrain_surpassed_aks"
+							duration = -1
+						
+						}
+					}
+				
+				}
+			
+			}
+
+}
+
+aksum_egypt_branch = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = AKS
+					}
+						
+			}
+			
+			has_country_shield = yes
+		
+			
+			conquer_the_lower_nile_aks = {
+			
+				position = 5
+				required_missions = {conquer_qasr_ibrim_aks}
+				icon = dominant_economy
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = said_area
+							province_id = 1232
+							province_id = 2324
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					said_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2324 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					1232 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+					gulf_of_arabia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				
+					al_wahat_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					vostani_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					bahari_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+			advance_the_frontier_aks = {
+			
+				position = 6
+				required_missions = {conquer_the_lower_nile_aks}
+				icon = mission_egyptian_mamluk_soldier
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = gulf_of_arabia_area
+							area = bahari_area
+							area = al_wahat_area
+							area = vostani_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					gulf_of_arabia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					bahari_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					al_wahat_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					vostani_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					358 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+			the_patriarchate_of_alexandria_aks = {
+			
+				position = 7
+				required_missions = {advance_the_frontier_aks}
+				icon = mission_hands_praying
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 358
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					358 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_aks.1 }
+				
+				}
+			
+			}
+			
+			aksumite_egypt_aks = {
+			
+				position = 8
+				required_missions = {the_patriarchate_of_alexandria_aks}
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							region = egypt_region
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					egypt_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+			
+						egypt_region = {
+							add_province_modifier = {
+								name = "faster_integration"
+								duration = 5475
+							}
+						}
+						
+						379 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+						add_permanent_claim = ROOT
+					
+					}
+						
+				}
+			
+			}
+				
+			
+			
+}
+
+aks_yemen_and_arabia_branch = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+				OR = {
+						tag = AKS
+					}
+						
+			}
+
+			has_country_shield = yes
+			
+		
+			conquer_upper_yemen_aks = {
+			
+				position = 7
+				required_missions = {conquer_aden_aks}
+				icon = mission_market_place_with_asian_traders
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = tihama_al_yemen_area
+							area = asir_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					asir_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					tihama_al_yemen_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 2
+					
+					mecca_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+					
+					medina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+						
+							add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+			in_the_name_of_christ_aks = {
+			
+				position = 8
+				required_missions = { conquer_upper_yemen_aks }
+				icon = spread_piety
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = mecca_area
+							area = medina_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					mecca_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					medina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "in_the_name_of_christ_aks"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+}			
+
+aksum_eco_branch = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+		
+				tag = AKS
+	
+			}	
+			
+		has_country_shield = yes
+			
+			
+		restore_aksum_aks = {
+		
+			position = 5
+			required_missions = {  }
+			icon = mission_early_game_buildings
+
+
+			provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1227
+				
+						}
+						
+			}
+			
+			trigger = {
+			
+				1227 = {
+				
+					development = 35
+					
+					
+						OR = {
+						
+							has_building = barracks
+							has_building = temple
+							has_building = workshop
+							has_building = marketplace
+						
+						}
+						
+						has_building = fort_15th
+					
+					
+				
+				}
+			
+			}
+			
+			effect = {
+			
+					if = {
+						limit = {
+							1227 = {
+								owned_by = ROOT
+								
+								NOT = {
+									is_capital = yes
+								}
+							}
+						}
+						set_capital = 1227
+					}
+					
+				1227 = {
+				
+					add_base_manpower = 3
+					add_base_production = 3
+					add_base_tax = 3
+					
+					add_province_modifier = {
+					
+						name = "aksum_restored"
+						duration = -1
+					
+					}
+				
+				}
+				
+			}
+			
+		}
+		
+		early_industralization_aks = {
+		
+			position = 6
+			required_missions = {  }
+			icon = mission_expand_textile_industry
+			
+			provinces_to_highlight = {
+				owned_by = ROOT
+				has_production_building_trigger = no
+				ROOT = {
+					NOT = {
+						num_of_owned_provinces_with = {
+							value = 10
+							has_production_building_trigger = yes
+						}
+					}
+				}
+			}
+			
+			trigger = {
+			
+					num_of_owned_provinces_with = {
+						value = 10
+						has_production_building_trigger = yes
+					}
+			
+			}
+			
+			
+				effect = {
+					every_owned_province = {
+						limit = {
+						OR = {
+							has_building = workshop
+							has_building = counting_house
+							}
+						}
+						add_province_modifier = {
+							name = "rapid_industrialization_aks"
+							duration = 5475
+						}
+					}
+				}
+			
+				
+			
+		}
+		
+		large_treasury_aks = {
+		
+			position = 7
+			required_missions = {early_industralization_aks}
+			icon = mission_war_chest
+			
+			trigger = {
+			
+				treasury = 2000
+				num_of_loans = 0
+			
+			}
+			
+			effect = {
+			
+				add_country_modifier = {
+				
+					name = "booming_economy_aks"
+					duration = 5475
+				
+				}
+			
+			}
+		
+		}
+		
+		empire_of_aksum_aks = {
+			
+			position = 9
+			required_missions = {large_treasury_aks  aksumite_egypt_aks  in_the_name_of_christ_aks  take_dhofar_hormuz_aks}
+			icon = mission_empire
+			
+			trigger = {
+			
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+			
+			}
+			
+			effect = {
+			
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				
+				add_country_modifier = {
+				
+					name = "empire_of_aksum_aks"
+					duration = -1
+				
+				}
+			
+			}
+		
+		}
+		
+		
+			
+}

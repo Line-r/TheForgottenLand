@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = hausan_trading_kingdom_reform
+primary_culture = hausa
+religion = shamanism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 2278	
+religious_school = maliki_school
+
+#Kings of Kebbi are far less well known than those of Kano
+
+1444.1.1 = {
+	monarch = {
+		name = "Tribal Council"
+		dip = 1
+		adm = 1
+		mil = 1
+		regent = yes
+	}
+}

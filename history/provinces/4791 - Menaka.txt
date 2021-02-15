@@ -1,0 +1,18 @@
+owner = AGH # Who is the current owner of the province
+controller = AGH      # Who is the current controller of the province
+add_core = AGH        # Adds a core for the specified tag
+is_city = yes      # Whether this province is a proper city, i.e. not a colony. 
+
+culture = tuareg     # The culture of the province
+religion = sunni   # The religion of the province
+
+base_tax = 1        # The base tax of the province
+base_production = 1 # The base production of the province
+base_manpower = 1   # The base manpower of the province
+
+trade_goods = wool   # The tradegood assigned to this province, from 00_tradegoods.txt      # Adds this estate to the province
+hre = no          # Whether this province is in the HRE or not
+capital = "Menaka"    # The capital name to use for the province, otherwise the province name is used as the capital name.
+
+discovered_by = sub_saharan  # Grants the specified technology group vision of this province
+unrest = 0                      # Adds base unrest           

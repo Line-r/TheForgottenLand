@@ -1,0 +1,258 @@
+namespace = flavor_mmi
+
+country_event = {	#Sus: Moroccoan or Berber?
+
+	id = flavor_mmi.1
+	title = flavor_mmi.1.t
+	desc = flavor_mmi.1.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+	
+		tag = SOS					
+		current_age = age_of_discovery
+	
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = { #We are more Moroccoan than Berber.
+	
+		name = "flavor_mmi.1.a"
+		
+		change_primary_culture = moroccan
+		add_prestige = -20
+	
+	}
+	
+	option = { #We are Berbers and forever will be!
+	
+		name = "flavor_mmi.1.b"
+		
+		add_country_modifier = {
+		
+			name = "mcm_favours_berbers"
+			duration = 7300
+		
+		}
+		
+		MOR = {
+		
+			country_event = {id = flavor_mmi.2}
+		
+		}
+		
+		custom_tooltip = mmi_moroccanwar_tooltip
+	
+	}
+	
+}
+
+country_event = {	#Morocco: Matters of Sus
+
+	id = flavor_mmi.2
+	title = flavor_mmi.2.t
+	desc = flavor_mmi.2.d
+	picture = BIG_BOOK_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #They will fall!
+	
+		name = "flavor_mmi.2.a"
+		ai_chance = { factor = 70 }
+		
+		SOS = {
+			
+			grant_independence = yes
+			country_event = {id = flavor_mmi.3}
+		
+		}
+		
+		ROOT = {
+		
+			declare_war_with_cb = {
+				who = SOS
+				casus_belli = cb_annex
+			}
+		
+		}
+	
+	}
+	
+	option = { #This would be too lowly of us.
+	
+		name = "flavor_mmi.2.b"
+		ai_chance = { factor = 30 }
+		
+		SOS = {
+			
+			add_prestige = 5
+		
+		}
+		
+		ROOT = {
+		
+			add_prestige = -10
+		
+		}
+	
+	}
+	
+}
+
+country_event = {	#Sus: Our war, on our own...
+
+	id = flavor_mmi.3
+	title = flavor_mmi.3.t
+	desc = flavor_mmi.3.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #Let us step back...
+	
+		name = "flavor_mmi.3.a"
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 50
+				num_of_allies = 0
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					num_of_allies = 1
+					num_of_allies = 2
+					num_of_allies = 3
+				}
+			}
+		}
+		
+		ROOT = {
+		
+			change_primary_culture = moroccan
+			add_prestige = -33
+		
+		}
+		
+		MOR = {
+		
+			add_prestige = 25
+			vassalize = SOS
+			add_truce_with = SOS
+			white_peace = SOS
+		
+		}
+	
+	}
+	
+	option = { #By God, to war!
+	
+		name = "flavor_mmi.3.b"
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				num_of_allies = 0
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					num_of_allies = 1
+					num_of_allies = 2
+					num_of_allies = 3
+				}
+			}
+		}
+		
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power =100
+	
+	}
+	
+	option = { #Let us seek the help of The Iberians.
+	
+		name = "flavor_mmi.3.c"
+		ai_chance = { factor = 40 }
+		
+		CAS = {
+			country_event = {id = flavor_mmi.5}
+		}
+		POR = {
+			country_event = {id = flavor_mmi.5}
+		}
+		MOR = {
+			country_event = {id = flavor_mmi.4}
+		}
+	
+	}
+	
+}
+
+country_event = {	#Morocco: Crisis of Morocco
+
+	id = flavor_mmi.4
+	title = flavor_mmi.4.t
+	desc = flavor_mmi.4.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	major = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #This will decide the fate of Morocco and the nearby regions for the time to come.
+	
+		name = "flavor_mmi.4.a"
+		if = {
+		
+			every_country = { limit = { primary_culture = moroccan } }
+			
+			add_country_modifier = {
+			
+				name = "mcm_crisis_of_morocco"
+				duration = 7300
+			
+			}
+			
+		}
+		
+	}
+	
+}
+
+country_event = { #Castile and Portugal: Sus seeks help!
+
+	id = flavor_mmi.5
+	title = flavor_mmi.5.t
+	desc = flavor_mmi.5.d
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #Heathens or not, God may have shown them the light today.
+	
+		name = "flavor_mmi.5.a"
+		
+		create_alliance = SOS
+	
+	}
+	
+	option = { #We will observe.
+	
+		name = "flavor_mmi.5.b"
+		
+		add_prestige = 1
+	
+	}
+
+}
+	

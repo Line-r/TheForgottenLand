@@ -1,0 +1,92 @@
+namespace = flavor_peg
+normal_or_historical_nations = yes
+
+country_event = {
+
+	id = flavor_peg.1 #end of ARK piracy
+	title = "toe_peg_event_1_title"
+	desc = "toe_peg_event_1_desc"
+	
+	picture = ADVISOR_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "pegarakandefeated1"
+		
+			BNG = {
+			
+				if = {
+						limit = { exists = BNG }
+							BNG = {
+								add_opinion = {
+									who = ROOT
+									modifier = peg_bengal_alliance
+								}
+							}
+						}
+			
+			}
+			
+			create_alliance = BNG
+			
+			hidden_effect = {
+			
+				set_country_flag = allied_bengal_flag
+			
+			}
+			
+			custom_tooltip = my_tooltip
+		
+		}
+		
+	option = {
+		name = "pegarakandefeated2"
+		
+		add_prestige = 20
+		
+		hidden = {
+		
+			set_country_flag = denied_bengal_alliance_flag
+		
+		}
+		
+		custom_tooltip = my_tooltip
+	
+	}
+
+}
+
+country_event = {
+
+	id = flavor_peg.2
+	title = "toe_peg_event_2_title"
+	desc = "toe_peg_event_2_desc"
+	
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+	
+		name = "pegpayforchittagong.1"
+		
+		BNG = {
+		
+			add_treasury = 100
+		
+		}
+		
+		PEG = {
+		
+			add_treasury = -100
+		
+		}
+	
+	}
+	
+}

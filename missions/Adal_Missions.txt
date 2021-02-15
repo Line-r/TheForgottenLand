@@ -1,0 +1,800 @@
+ada_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ADA
+	
+			}			
+			has_country_shield = yes
+			
+			ottoman_diplomacy_ada = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_ottoman_diplomacy
+				
+				trigger = {
+				
+					TUR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "ada_far_reaching_diplomacy"
+						duration = 5475
+					
+					}
+					
+					somaliland_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_warsangali_ada = {
+			
+				position = 2
+				required_missions = { ottoman_diplomacy_ada }
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = somaliland_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					somaliland_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					majarteen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			sweep_majarteen_ada = {
+			
+				position = 3
+				required_missions = {conquer_warsangali_ada}
+				icon = mission_conquer_air
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = somaliland_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					majarteen_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					mogadishu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_mogadishu_ada = {
+			
+				position = 4
+				required_missions = {sweep_majarteen_ada}
+				icon = mission_asian_trader
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = mogadishu_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					mogadishu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1201 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			sieze_zanzibar_ada = {
+			
+				position = 5
+				required_missions = {conquer_mogadishu_ada}
+				icon = mission_market_place_with_asian_traders
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1201
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					mogadishu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1448 = {
+						add_trade_modifier = {
+							who = ROOT
+							duration = 7300
+							power = 33
+							key = zanzibar_ada
+						}
+				
+					}
+			
+				}
+				
+			}
+			
+			
+			
+}
+
+ada_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ADA
+	
+			}			
+			has_country_shield = yes
+			
+			
+			raise_an_army_ada = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_assemble_an_army
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					manpower_percentage = 0.50
+				
+				}
+				
+				effect = {
+				
+					central_ethiopia_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					shewa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+					
+					damot_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_ethiopia_ada = {
+			
+				position = 2
+				required_missions = { raise_an_army_ada }
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = central_ethiopia_area
+							area = shewa_area
+							area = damot_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					central_ethiopia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					shewa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					damot_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 50
+					add_mil_power = 50
+				
+				}
+			
+			}
+			
+			berbera_shipyard_ada = {
+			
+				position = 3
+				required_missions = { conquer_warsangali_ada }
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1209
+				
+						}
+				}
+				
+				trigger = {
+				
+					1209 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						development = 15
+						has_building = shipyard
+					}
+				
+				}
+				
+				effect = {
+				
+					hadramut_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			a_new_capital_ada = {
+			
+				position = 5
+				required_missions = { conquer_mogadishu_ada }
+				icon = mission_dominate_home_trade_node
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1205
+							province_id = 1209
+				
+						}
+				}
+				
+				trigger = {
+				
+					1205 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						development = 15
+					}
+					
+					1209 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						development = 15
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_ada.1 }
+				
+				}
+			
+			}
+			
+}
+
+ada_slot_3 = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ADA
+	
+			}			
+			has_country_shield = yes
+			
+			
+				build_a_trading_fleet_ada = {
+				
+					position = 1
+					required_missions = {  }
+					icon = mission_establish_high_seas_navy
+					
+					trigger = {
+					
+						navy_size_percentage = 1
+						num_of_admirals = 1
+						light_ship_fraction = 0.50
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "trading_fleet_ada"
+							duration = 7300
+						
+						}
+					
+					}
+				
+				}
+				
+				gulf_trade_ada = {
+				
+					position = 2
+					required_missions = {build_a_trading_fleet_ada}
+					icon = mission_rb_colonise_spice_islands
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							province_id = 4346
+				
+						}
+					}
+					
+					trigger = {
+					
+						4346 = {	#Gulf of Aden node
+							trade_share = {
+							country = ADA
+							share = 25
+							}
+						}
+					
+					}
+					
+					effect = {
+					
+						yemen_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						upper_yemen_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+					
+						tihama_al_yemen_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+						
+						asir_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+						
+						1248 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+							add_permanent_claim = ROOT
+				
+						}
+					
+					}
+				
+				}
+				
+				conquer_yemen_ada = {
+				
+					position = 4
+					required_missions = {gulf_trade_ada}
+					icon = fortress_of_belgrade
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = tihama_al_yemen_area
+							area = yemen_area
+							area = upper_yemen_area
+							area = asir_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						asir_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+						yemen_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						upper_yemen_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						tihama_al_yemen_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						add_mercantalism = 3
+					
+						mecca_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+						
+						medina_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+					
+					}
+				
+				}
+				
+				the_holy_cities_ada = {
+				
+					position = 5
+					required_missions = {conquer_yemen_ada}
+					icon = mission_mosque
+					
+					provinces_to_highlight = {
+						OR = {
+				
+							area = mecca_area
+							area = medina_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						mecca_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+						medina_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						 add_country_modifier = {
+						 
+							name = "ada_the_holy_cities"
+							duration = 5475
+						 
+						 }
+					
+					}
+				
+				}
+				
+				golden_adal_ada = {
+				
+					position = 6
+					required_missions = {the_holy_cities_ada a_new_capital_ada sieze_zanzibar_ada}
+					icon = mission_empire
+					
+					trigger = {
+					
+						prestige = 75
+						army_size_percentage = 1
+						navy_size_percentage = 1
+					
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+						
+							name = "ada_golden_adal"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+}
+
+ada_slot_4 = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = ADA
+	
+			}			
+			has_country_shield = yes
+			
+			
+			indian_bases_ada = {
+			
+				position = 3
+				required_missions = { gulf_trade_ada }
+				icon = mission_galleys_in_port
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							province_id = 1248
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+					
+					1248 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+				effect = {
+				
+					malabar_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+						}
+				
+				}
+				
+			}
+			
+			west_indian_ports_ada = {
+			
+				position = 4
+				required_missions = { indian_bases_ada }
+				icon = mission_indian_empire
+				
+				provinces_to_highlight = {
+						OR = {
+				
+							area = malabar_area
+				
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+					
+				trigger = {
+					
+					malabar_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+				effect = {
+				
+					kanara_area = {
+								limit = {
+									NOT = { is_permanent_claim = ROOT }
+									NOT = { is_core = ROOT }
+									}
+								add_permanent_claim = ROOT
+					
+					}
+				
+				}
+			
+			}
+			
+			stability_in_the_realm_ada = {
+			
+				position = 5
+				required_missions = {  }
+				icon = mission_high_income
+				
+				trigger = {
+				
+					stability = 2
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "ada_realm_stability"
+						duration = 7300
+					
+					}
+					
+				}
+			
+			}
+			
+			future_of_intrigue = {
+			
+				position = 6
+				required_missions = { stability_in_the_realm_ada }
+				icon = personal_diplomacy
+				
+				trigger = {
+				
+					spymaster = 3
+					
+					dip_power = 100
+					
+					any_rival_country = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 25
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "ada_mastery_of_intrigue"
+						duration = -1
+					
+					}
+					
+				}
+			
+			}
+			
+}

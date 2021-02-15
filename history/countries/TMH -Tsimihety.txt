@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = madagasque
+religion = shamanism
+technology_group = east_african
+unit_type = sub_saharan
+capital = 4023
+
+1444.1.1 = {
+	monarch = {
+		name = "Tribal Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

@@ -1,0 +1,264 @@
+trade_branch_swa = {
+			slot = 1 
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MBA
+							tag = MLI
+							tag = PTE
+							}
+						
+						
+						}			
+			has_country_shield = yes
+			
+			
+			protect_trade = {
+			
+				position = 1
+				required_missions = {  }
+				icon = 	mission_galleys_in_port
+				
+				trigger = {
+				
+					navy_size_percentage = 1
+					navy_tradition = 25
+				
+				}
+				
+				effect = {
+				
+					1201 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			sieze_zanzibar = {
+			
+				position = 2
+				required_missions = {protect_trade}
+				icon = mission_market_place_with_asian_traders
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 1201
+			
+					}
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				
+				trigger = {
+				
+					1201 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					central_swahili_coast_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					mozambique_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					add_country_modifier = {
+					
+						name = "zanzibar_taken"
+						duration = 5475
+					
+					}
+				
+				}
+			
+			}
+			
+			
+			
+			defeat_kilwa = {
+			
+				position = 3
+				required_missions = {sieze_zanzibar}
+				icon = mission_african_soldier
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = central_swahili_coast_area
+						area = mozambique_area
+			
+					}
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					central_swahili_coast_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					mozambique_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+				
+				}
+				
+				effect = {
+				
+					1186 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4040 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+				
+}
+
+
+swahili_branch_swa = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						OR = {
+							tag = MBA
+							tag = MLI
+							tag = PTE
+							}
+							
+						
+						
+						}			
+			has_country_shield = yes
+			
+			
+			prepare_for_war_swa = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_african_soldier
+				
+				trigger = {
+				
+					army_size_percentage = 1
+					manpower_percentage = 0.50
+					num_of_generals = 1
+				
+				}
+				
+				effect = {
+				
+					mombasa_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					northern_swahili_coast_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			unite_the_swahilis_swa = {
+			
+				position = 3
+				required_missions = {prepare_for_war_swa}
+				icon = mission_monarch_in_throne_room
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = mombasa_area
+						area = northern_swahili_coast_area
+			
+					}
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					mombasa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					northern_swahili_coast_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+				
+				}
+				
+				effect = {
+				
+					1193 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			
+}

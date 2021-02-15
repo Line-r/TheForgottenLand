@@ -1,0 +1,51 @@
+namespace = flavor_kta
+normal_or_historical_nations = yes
+
+country_event = {
+	id = flavor_kta.1
+	title = flavor_kta.1.t
+	desc = flavor_kta.1.d
+	
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+	
+		name = "flavor_kta1.1"
+		
+		KTA = {
+		
+			change_religion = catholic
+		
+		}
+	
+	}
+	
+	option = {
+	
+		name = "flavor_kta1.2"
+		
+		KTA = {
+		
+			change_religion = protestant
+		
+		}
+	
+	}
+	
+	option = {
+	
+		name = "flavor_kta1.3"
+		
+		KTA = {
+		
+			add_dip_power = -20
+		
+		}
+	
+	}
+	
+}

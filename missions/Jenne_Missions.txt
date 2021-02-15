@@ -1,0 +1,552 @@
+jnn_slot_1 = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = JNN
+	
+			}			
+			has_country_shield = yes
+			
+			modernize_jenne_jnn = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_restore_faith_in_the_throne
+				
+				trigger = {
+				
+					OR = {
+						AND = {
+							NOT = {
+									
+								current_age = age_of_discovery
+									
+							}
+									
+							has_institution = feudalism
+							has_institution = renaissance
+							
+						}
+						
+						AND = {
+						
+							OR = {
+						
+								government = monarchy
+								government = republic
+								government = theocracy
+							
+							}
+						
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 100
+					add_dip_power = 100
+					add_mil_power = 100
+				
+				}
+			
+			}
+			
+			city_of_grandeur_jnn = {
+			
+				position = 2
+				required_missions = {modernize_jenne_jnn}
+				icon = mission_conquer_timbuktu
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1134
+					}
+					
+				}
+				
+				trigger = {
+				
+					1134 = {
+					
+						development = 30
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 25
+					1134 = {
+					
+						add_province_modifier = {
+						
+							name = "grand_jenne_city_jnn"
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+			
+			}
+			
+			city_of_universisities_jnn = {
+			
+				position = 3
+				required_missions = {city_of_grandeur_jnn}
+				icon = mission_early_modern_university
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1134
+					}
+					
+				}
+				
+				trigger = {
+				
+					1134 = {
+					
+						has_building = university
+						has_building = courthouse
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_adm_power = 75
+					add_country_modifier = {
+					
+						name = "scholars_of_jenne_jnn"
+						duration = -1
+					
+					}
+					
+				}
+			
+			}
+			
+			land_of_the_pious_jnn = {
+			
+				position = 4
+				required_missions = {city_of_universisities_jnn}
+				icon = mission_mosque
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 1134
+						province_id = 2261
+						province_id = 4804
+					}
+					
+				}
+				
+				trigger = {
+				
+					1134 = {
+					
+						religion = sunni
+					
+					}
+					
+					2261 = {
+					
+						religion = sunni
+					
+					}
+					
+					4804 = {
+					
+						religion = sunni
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					add_piety = 0.33
+					add_dip_power = 25
+				
+				}
+			
+			}
+			
+			disband_songhai_jnn = {
+			
+				position = 5
+				required_missions = {control_timbuktu_jnn}
+				icon = mission_african_trade_post
+				
+				provinces_to_highlight = {
+				
+					OR = {
+						
+						province_id = 2264
+						province_id = 2262
+						province_id = 1133
+					}
+					
+				}
+				
+				trigger = {
+				
+					2264 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2262 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1133 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					NOT = {
+					
+						exists = SON
+					
+					}
+					
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "songhai_defeated_jnn"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+
+}
+
+jnn_slot_2 = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = JNN
+	
+			}			
+			has_country_shield = yes
+			
+			secure_home_area_jnn = {
+			
+				position = 1
+				required_missions = {}
+				icon = mission_unite_home_region
+				
+				provinces_to_highlight = {
+				
+					OR = {
+					
+						area = jenne_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					jenne_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					jenne_area = {
+					
+						limit = {country_or_non_sovereign_subject_holds = ROOT}
+						add_province_modifier = {
+						
+							name = "secured_jenne_jnn"
+							duration = 14600
+						
+						}
+					
+					}
+					
+					massina_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			occupy_segou_jnn = {
+			
+				position = 2
+				required_missions = {secure_home_area_jnn}
+				icon = mission_african_soldier
+				
+				provinces_to_highlight = {
+				
+					OR = {
+					
+						area = massina_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					massina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "segou_trade_jnn"
+						duration = 7300
+					
+					}
+					
+					wagadu_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			smash_massina_jnn = {
+			
+				position = 3
+				required_missions = {city_of_grandeur_jnn occupy_segou_jnn}
+				icon = mission_conquer_50_development
+				
+				provinces_to_highlight = {
+				
+					OR = {
+					
+						area = wagadu_area
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					wagadu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 33
+					add_mil_power = 50
+					baghena_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					2260 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					4792 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					1132 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+			
+			}
+			
+			control_timbuktu_jnn = {
+			
+				position = 4
+				required_missions = {smash_massina_jnn}
+				icon = mission_saharan_route
+				
+				provinces_to_highlight = {
+				
+					OR = {
+					
+						area = baghena_area
+						province_id = 2260
+						province_id = 4792
+						province_id = 1132
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+				
+					baghena_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2260 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					4792 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1132 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_years_of_income = 3
+					1135 = { #YAT
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					2265 = { #YAT
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					
+					2262 = { #SON
+						limit = { 
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					2264 = { #SON
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+					1133 = { #SON
+						limit = {
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_permanent_claim = ROOT
+					}
+				
+				}
+	
+			}
+			
+			campaign_in_yatenga_jnn = {
+			
+				position = 5
+				required_missions = {control_timbuktu_jnn}
+				icon = mission_build_up_to_force_limit
+				
+				provinces_to_highlight = {
+				
+					OR = {
+					
+						province_id = 1135
+						province_id = 2265
+						
+					}
+					
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				
+				trigger = {
+					
+					1135 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					2265 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_prestige = 50
+				
+				}
+			
+			}
+			
+}

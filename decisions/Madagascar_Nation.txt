@@ -1,0 +1,109 @@
+country_decisions = {
+	form_madagascar_nation = {
+	
+	major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = form_madagascar_nation }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = MGR }
+			OR = {
+				NOT = { exists = MGR }
+				ai = no
+			}
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			primary_culture = madagasque
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+	
+	provinces_to_highlight = {
+			OR = {
+				province_id = 4022 #Iboina
+				province_id = 1193 #Menabe
+				province_id = 4023 #Tsimethy
+				province_id = 4026 #Antemoro
+				province_id = 1792 #Merina
+				province_id = 4029 #Antanosy
+				province_id = 4025 #Vantro-mandry??
+				province_id = 4024 #Maroantstra
+				
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+	
+	allow = { 
+		NOT = { exists = MGR }
+
+		is_at_war = no
+		is_nomad = no
+
+		is_free_or_tributary_trigger = yes
+		
+		owns_core_province = 4022 #Iboina
+		owns_core_province = 1193 #Menabe
+		owns_core_province = 4023 #Tsimethy
+		owns_core_province = 4026 #Antemoro
+		owns_core_province = 1792 #Merina
+		owns_core_province = 4029 #Antanosy
+		owns_core_province = 4025 #Vantro-mandry??
+		owns_core_province = 4024 #Maroantstra
+		
+		adm_tech = 10
+		
+	}
+	
+	effect = { 
+	change_tag = MGR
+
+	remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = { NOT = { government_rank = 2 } }
+			set_government_rank = 2
+		}
+				
+		add_country_modifier = {
+			name = "centralization_modifier"
+			duration = 7300
+		}
+		add_prestige = 50
+		if = {
+			limit = {
+				has_custom_ideas = no
+				NOT = { has_idea_group = MGR_ideas }
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		set_country_flag = madagascar_formed_flag
+		swap_non_generic_missions = yes
+	}
+	
+	ai_will_do = {
+		factor = 100
+	}
+	
+	ai_importance = 400
+	}
+	
+}

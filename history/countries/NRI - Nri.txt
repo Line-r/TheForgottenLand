@@ -1,0 +1,168 @@
+government = tribal
+add_government_reform = tribal_despotism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+religion = shamanism #Fetishism
+primary_culture = yorumba
+capital = 2295
+
+
+1444.1.1 = {
+	monarch = {
+		name = "Eze Nri Omalonyeso"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Eze Nri Anyamata"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+
+1465.1.1 = {
+	monarch = {
+		name = "Eze Nri Anyamata"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1465.1.1 = {
+	heir = {
+		name = "Eze Nri Fenenu"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+
+1511.1.1 = {
+	monarch = {
+		name = "Eze Nri Fenenu"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1511.1.1 = {
+	heir = {
+		name = "Eze Nri Agụ"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+
+1512.1.1 = {
+	monarch = {
+		name = "Eze Nri Fenenu"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1512.1.1 = {
+	heir = {
+		name = "Eze Nri Agụ"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1583.1.1 = {
+	monarch = {
+		name = "Eze Nri Agụ"
+		adm = 4
+		dip = 3
+		mil = 1
+	}
+}
+
+1583.1.1 = {
+	heir = {
+		name = "Eze Nri Apia and Nri-Alike"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+
+
+1677.1.1 = {
+	monarch = {
+		name = "Eze Nri Apia and Nri-Alike"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+
+1677.1.1 = {
+	heir = {
+		name = "Eze Nri Ezimilo"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+
+
+1701.1.1 = {
+	monarch = {
+		name = "Eze Nri Ezimilo"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+
+1701.1.1 = {
+	heir = {
+		name = "Eze Nri Èwenétem"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1723.1.1 = {
+	monarch = {
+		name = "Eze Nri Èwenétem"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1723.1.1 = {
+	heir = {
+		name = "Eze Nri Ènweleána I"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1795.1.1 = {
+	heir = {
+		name = "Eze Nri Ènweleána I"
+		adm = 4
+		dip = 1
+		mil = 2
+	}
+}

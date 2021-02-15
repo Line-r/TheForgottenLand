@@ -1,0 +1,145 @@
+int_unite_kta = {
+			slot = 1 
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				culture_group = great_lakes_group
+						NOT = {
+							tag = KTA	
+							}
+						}			
+			has_country_shield = yes
+	
+	
+			destroy_bunyoro_inter = {
+				
+					position = 1
+					required_missions = {  }
+					icon = mission_african_soldier
+		
+		
+				trigger = {
+				
+					owns = 4065
+					owns = 4074
+				
+					}
+					
+				effect = {
+				
+					add_treasury = 100
+					add_adm_power = 75
+				
+					}
+			
+			}
+			
+			control_uganda_inter = {
+				position = 2
+				required_missions = {  }
+				icon = mission_war_chest
+			
+				trigger = {
+				
+					owns = 4066
+					owns = 4062
+					owns = 4064
+				
+					}
+					
+				effect = {
+				
+				4064 = {
+					add_center_of_trade_level = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_base_tax = 1
+						}
+				
+					}
+				
+			}
+			
+			master_of_rwanda_inter = {
+					position = 3
+					required_missions = {  }
+					icon = mission_dominate_home_trade_node
+				
+				trigger = {
+				
+					rwanda_area = {
+						type = all
+						owned_by = ROOT
+						}
+				
+					}
+					
+				effect = {
+				
+					add_dip_power = 75
+					add_mil_power = 75
+					add_adm_power = 75
+				
+					}
+				
+				}
+			
+			anihilate_karagwe_inter = {
+				position = 4
+				required_missions = {  }
+				icon = mission_african_soldier
+			
+			
+				trigger = {
+				
+					owns = 4063
+					owns = 4061
+				
+					}
+					
+				effect = {
+				
+					4063 = {
+						add_base_tax = 1
+						add_base_manpower = 1
+						add_base_production = 1
+						}
+						
+				add_mil_power = 100
+				
+					}
+				
+			}
+
+			take_buha_inter = {
+				position = 5
+				required_missions = {  }
+				icon = mission_invade_island
+				
+				trigger = {
+				
+					owns = 4070
+					owns = 4071
+					owns = 4072
+				
+					}
+					
+				effect = {
+				
+					add_treasury = 100
+				
+				4072 = {
+					add_base_production = 1
+					add_base_manpower = 2
+						}
+				
+					}
+				
+			}
+
+
+
+
+
+}

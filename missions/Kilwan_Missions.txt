@@ -1,0 +1,1815 @@
+kilwa_madagascar_mission = {
+		slot = 2
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+
+
+			take_madagascar_zan = {
+			
+			position = 2
+			required_missions = {prepare_an_army_zan  prepare_an_military_zan}
+			icon = mission_establish_high_seas_navy
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = madagascar_highlands_area
+			area = betsimasaraka_area
+			area = southern_madagascar
+			area = sakalava_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			madagascar_highlands_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			betsimasaraka_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			southern_madagascar = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			sakalava_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			add_country_modifier = {
+			name = "kilwan_madagascar_workforce_zan"
+			duration = 7300
+					}
+			
+				}
+			
+			}
+
+
+}
+
+
+
+kilwa_expansion_one = {
+		slot = 3
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+
+			
+		prepare_an_military_zan = {
+		
+		position = 1
+		required_missions = {  }
+		icon = mission_persian_soldiers
+		
+		trigger = {
+		
+		army_size_percentage = 1
+		manpower_percentage = 0.75
+		num_of_generals = 1
+		
+			}
+			
+		effect = {
+		
+		butua_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			zimbabwe_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4047 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			upper_zambezi_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			shire_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4045 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4044 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4037 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4048 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			4034 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+				
+			northern_swahili_coast_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			mombasa_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			sakalava_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			southern_madagascar = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			madagascar_highlands_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			betsimasaraka_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+			
+			lower_zambezi_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+		
+			}
+		
+		}
+		
+		zambezi_gold_zan = {
+		
+		position = 2
+		required_missions = {prepare_an_military_zan}
+		icon = mission_zambezi_gold
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = shire_area
+			area = lower_zambezi_area
+			area = butua_area
+			area = zimbabwe_area
+			province_id = 4047
+			province_id = 4037
+			province_id = 4048
+			province_id = 4045
+			province_id = 4044
+			province_id = 4034
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		shire_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		lower_zambezi_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		butua_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		zimbabwe_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+		4047 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4037 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4048 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4045 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4044 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4034 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+		
+			}
+		
+		effect = {
+		
+		add_country_modifier = {
+		name = "zambezi_gold"
+		duration = -1
+		
+		
+				}
+		
+			}
+		
+		
+		}
+
+		
+		break_the_status_quo_zan = {
+		
+		position = 3
+		required_missions = {zambezi_gold_zan}
+		icon = mission_clear_the_delta
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = upper_zambezi_area
+			area = zambia_area
+			area = tanzania_area
+			area = kenya_area
+			area = ngonde_area
+			area = ruvuma_area
+			area = uticulo_makuana_area
+			province_id = 4102
+			province_id = 4075
+			province_id = 4077
+			province_id = 4076
+			province_id = 4059
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		upper_zambezi_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		zambia_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4102 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		tanzania_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		kenya_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4075 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4077 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4076 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		4059 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		ngonde_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		ruvuma_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		uticulo_makuana_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			}
+			
+		effect = {
+		
+		central_africa_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+		
+			}
+		
+		}
+		
+		kilwan_central_africa_zan = {
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			region = central_africa_region
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		position = 5
+		required_missions = {break_the_status_quo_zan}
+		icon = mission_african_gold
+		
+		trigger = {
+		
+		central_africa_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+		add_country_modifier = {
+		name = "kilwan_central_africa_modifier_zan"
+		duration = 14600
+				}
+				
+		kongo_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+		
+			}
+		
+		}
+		
+		kilwa_kongolese_copper_zan = {
+		
+		position = 7
+		required_missions = {kilwan_central_africa_zan}
+		icon = mission_cannons_firing
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			region = kongo_region
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		kongo_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+			if = {
+					limit = {
+						NOT = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				
+		add_country_modifier = {
+		name = "kongolese_copper"
+		duration = -1
+		
+				}
+		
+			}
+		
+		}
+}
+
+kilwa_arabian_expansion_branch = {
+		slot = 5
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+			
+			
+			prepare_an_army_zan = {
+			
+			position = 1
+			required_missions = {  }
+			icon = mission_south_indian_trade
+			
+			trigger = {
+			
+			navy_size_percentage = 1
+			
+				}
+				
+			effect = {
+			
+			1099 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+			
+				}
+			
+			}
+			
+			sail_to_arabia_zan = {
+			
+			position = 2
+			required_missions = {prepare_an_army_zan}
+			icon = mission_invade_island
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			province_id = 1099
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			1099 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			mahra_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			hadramut_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			dhofar_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+			
+				}
+			
+			}
+			
+			land_in_arabia_zan = {
+			
+			position = 3
+			required_missions = {sail_to_arabia_zan}
+			icon = mission_market_place_with_asian_traders
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = mahra_area
+			area = hadramut_area
+			area = dhofar_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			mahra_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			hadramut_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			dhofar_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			yemen_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+			upper_yemen_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+			tihama_al_yemen_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+				
+			asir_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+			
+			}
+			
+		}
+			
+		
+		
+		take_the_yemen_zan = {
+		
+		position = 4
+		required_missions = {land_in_arabia_zan}
+		icon = mission_mosque
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = yemen_area
+			area = upper_yemen_area
+			area = tihama_al_yemen_area
+			area = asir_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		yemen_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		upper_yemen_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		tihama_al_yemen_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		asir_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+		387 = {
+		
+		
+		add_province_modifier = {
+		
+		name = "coffe_mukha_kilwa_edition_zan"
+		duration = -1
+		
+					}
+					
+				}
+		
+		mecca_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		medina_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		tabuk_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+		
+			}
+		
+		}
+		
+		the_holy_cities_of_islam_zan = {
+		
+		position = 5
+		required_missions = {take_the_yemen_zan}
+		icon = mission_central_asian_city
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = tabuk_area
+			area = mecca_area
+			area = mecca_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		mecca_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		medina_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+		tabuk_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+		nafud_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+			
+				}
+				
+		yamamah_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		qasim_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+		
+		
+				}
+				
+				add_country_modifier = {
+				name = "medina_mecca_modifier_zan"
+				duration = 5475
+				
+				
+				}
+				
+			}
+		
+		}
+		
+		annex_arabian_desert_zan = {
+		
+		position = 6
+		required_missions = {the_holy_cities_of_islam_zan}
+		icon = mission_bedouins
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = nafud_area
+			area = yamamah_area
+			area = qasim_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		nafud_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		yamamah_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		qasim_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+		bahrain_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		pirate_coast_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		oman_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		mascat_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		2999 = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+		
+			}
+		
+		}
+		
+		hormuz_and_east_arabia_zan = {
+		
+		position = 7
+		required_missions = {annex_arabian_desert_zan}
+		icon = mission_corsairs_of_the_north_sea
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = bahrain_area
+			area = pirate_coast_area
+			area = oman_area
+			area = mascat_area
+			province_id = 2999
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		bahrain_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		pirate_coast_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		oman_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		mascat_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		2999 = {
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+			
+			add_country_modifier = {
+			name = "conquest_of_arabia"
+			duration = -1
+				}
+			
+			mogostan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+			kerman_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+			persian_gulf_coast = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+			farsistan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+			
+			}
+		
+		}
+		
+		
+		
+		
+		invade_persia_zan = {
+		
+		position = 8
+		required_missions = {hormuz_and_east_arabia_zan}
+		icon = mission_persian_soldiers
+		
+		provinces_to_highlight = {
+			OR = {
+			
+			area = mogostan_area
+			area = kerman_area
+			area = persian_gulf_coast
+			area = farsistan_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		
+		trigger = {
+		
+		mogostan_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		kerman_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		persian_gulf_coast = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+		farsistan_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+		
+			}
+			
+		effect = {
+		
+		add_mercantilism = 3
+		
+		isfahan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		iraq_e_ajam_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		khuzestan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+				
+		luristan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+				}
+		
+			}
+		
+		}
+}
+
+
+
+kiwa_swahili_coast_expansion_branch = {
+		slot = 4
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+			
+			
+			
+			swahili_expansion_zan = {
+			
+			position = 2
+			required_missions = {prepare_an_military_zan  prepare_an_army_zan}
+			icon = mission_steer_trade_to_bengal
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = mombasa_area
+			area = northern_swahili_coast_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			mombasa_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			northern_swahili_coast_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			mogadishu_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			ajuuran_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+			
+				}
+			
+			}
+			
+			
+			take_mogadishu_zan = {
+			
+			position = 4
+			required_missions = {swahili_expansion_zan}
+			icon = mission_dominate_home_trade_node
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = mogadishu_area
+			area = ajuuran_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			mogadishu_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			ajuuran_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			majarteen_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+					
+			somaliland_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+			
+				}
+			
+			}
+			
+			into_the_horn_zan = {
+			
+			position = 5
+			required_missions = {take_mogadishu_zan}
+			icon = mission_war_chest
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = majarteen_area
+			area = somaliland_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			majarteen_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			somaliland_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			ifat_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+					
+			aussa_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+			
+				}
+			
+			}
+			
+			annex_adal_zan = {
+			
+			position = 6
+			required_missions = {into_the_horn_zan}
+			icon = mission_african_soldier
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = aussa_area
+			area = ifat_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			ifat_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			aussa_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			central_ethiopia_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+					
+			tigray_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+					
+					}
+			
+				}
+			
+			}
+			
+			cotton_of_dembiya_zan = {
+			
+			position = 7
+			required_missions = {annex_adal_zan}
+			icon = mission_the_tamil_trade_guilds
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			area = central_ethiopia_area
+			area = tigray_area
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			central_ethiopia_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			tigray_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			2772 = {
+			
+			add_province_modifier = {
+			name = "cotton_of_dembiya"
+			duration = -1
+			
+						}
+			
+					}
+			
+				}
+			
+			}
+			
+			
+}
+
+
+
+kilwa_colonial_branch_one = {
+		slot = 1 
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+			
+			
+			kilwa_colonists_zan = {
+			
+			position = 2
+			required_missions = {  }
+			icon = mission_junk_boat
+			
+			trigger = {
+			
+			num_of_colonists = 1
+			
+				}
+				
+				
+			effect = {
+			
+			add_country_modifier = {
+			name = "kilwa_colonists_mission_zan"
+			duration = 5475
+			
+					}
+			
+				}
+			
+			}
+			
+			
+			kilwa_cape_zan = {
+			
+			position = 4
+			required_missions = {kilwa_colonists_zan}
+			icon = mission_arabian_sea_trade
+			
+			provinces_to_highlight = {
+			OR = {
+				area = cape_of_good_hope_area
+				area = south_african_plateau_area
+				area = transvaal_area
+				area = limpopo_area
+				province_id = 1177
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				OR = {
+					area = cape_of_good_hope_area
+					area = south_african_plateau_area
+					area = transvaal_area
+					area = limpopo_area
+					
+					}
+			
+				}
+				
+				1177 = {
+				country_or_non_sovereign_subject_holds = ROOT
+						}
+			
+					
+				
+				}
+				
+				effect = {
+				
+				1177 = {
+				add_province_modifier = {
+				name = "cape_global_market_zan"
+				duration = -1
+				
+							}
+						}
+				
+				}
+			
+			}
+			
+			
+			
+			sail_the_gulf_of_guinea_zan = {
+			
+			position = 5
+			required_missions = {kilwa_cape_zan}
+			icon = mission_rein_in_the_velamas
+			
+			provinces_to_highlight = {
+			OR = {
+				area = gulf_of_guinea_area
+				area = benin_area
+				area = west_africa_coast_area
+				area = guinea_coast_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				OR = {
+					area = gulf_of_guinea_area
+					area = benin_area
+					area = west_africa_coast_area
+					area = guinea_coast_area
+					
+						}
+			
+					}
+			
+				}
+				
+				effect = {
+				
+				add_dip_power = 100
+				
+				add_country_modifier = {
+				name = "growing_guinea_trade_zan"
+				duration = 5475
+					
+					}
+				
+				}
+			
+			}
+}
+
+kilwa_colonial_branch_two = {
+		slot = 2
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+			
+			
+			eastern_islands_zan = {
+			
+			position = 3
+			required_missions = {kilwa_colonists_zan}
+			icon = mission_arabian_ports
+			
+			provinces_to_highlight = {
+			OR = {
+				province_id = 4020
+				province_id = 1100
+				province_id = 1103
+				province_id = 1102
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			4020 = {
+			country_or_non_sovereign_subject_holds = ROOT
+			is_city = yes
+						}
+			
+			1100 = {
+			country_or_non_sovereign_subject_holds = ROOT
+			is_city = yes
+						}
+			
+			
+				}
+				
+			effect = {
+			
+				4020 = {
+				
+					add_base_manpower = 1
+					add_base_tax = 1
+					add_base_production = 1
+					add_center_of_trade_level = 1
+				
+					}
+					
+				add_country_modifier = {
+				
+					name = ""
+					duration = 7300
+				
+					}
+			
+				}
+			
+			}
+			
+			sail_to_india_zan = {
+			
+			position = 4
+			required_missions = {eastern_islands_zan}
+			icon = mission_naval_dominance
+			
+			provinces_to_highlight = {
+			OR = {
+				province_id = 1248
+				province_id = 1101
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			1248 = {
+			country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+			1101 = {
+			country_or_non_sovereign_subject_holds = ROOT
+			is_city = yes
+						}
+			
+				}
+				
+			effect = {
+			
+			add_country_modifier = {
+			name = "offensive_preparation"
+			duration = 5475
+			
+					}
+					
+			lanka_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+					
+			south_lanka_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+			
+				}
+			
+			}
+			
+			take_ceylon_zan = {
+			
+			position = 5
+			required_missions = {sail_to_india_zan}
+			icon = mission_rajput_trade_guilds
+			
+			provinces_to_highlight = {
+			OR = {
+				area = lanka_area
+				area = south_lanka_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			lanka_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+			south_lanka_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+				}
+				
+			effect = {
+			
+			2100 = {
+			
+			add_province_modifier = {
+			name = "diamonds_of_ceylon"
+			duration = -1
+			
+						}
+						
+					}
+						
+			2099 = {
+			
+			add_province_modifier = {
+			name = "diamonds_of_ceylon"
+			duration = -1
+			
+						}
+			
+					}
+					
+			4407 = {
+			
+			add_province_modifier = {
+			name = "diamonds_of_ceylon"
+			duration = -1
+			
+						}
+			
+				}
+				
+			coromandel_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+				
+					}
+			
+			}
+		}
+		
+}
+		
+		
+
+kilwa_dev_branch = {
+		slot = 5
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = ZAN
+			}
+			has_country_shield = yes
+			
+			
+			renovate_kilwa_zan = {
+			
+			position = 10
+			required_missions = {  }
+			icon = mission_early_modern_university
+			
+			provinces_to_highlight = {
+			OR = {
+			
+			province_id = 1196
+			
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			
+			trigger = {
+			
+			owns = 1196
+			
+			1196 = {
+			
+			has_building = marketplace
+			has_building = fort_15th
+			has_building = temple
+			
+			development = 30
+			
+					}
+			
+				}
+				
+			effect = {
+			
+					1196 = {
+					
+						province_event = { id = flavor_zan_kilwa.1 }
+						
+						}
+			
+				}
+			
+			}
+			
+			
+}

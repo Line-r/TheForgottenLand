@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = hausan_trading_kingdom_reform
+primary_culture = hausa
+religion = sunni
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 1148
+religious_school = maliki_school
+
+#Kings of Gobir. Very unknown other than later rulers.
+
+1444.1.1 = {
+	monarch = {
+		name = "Tribal Council"
+		dip = 1
+		adm = 1
+		mil = 1
+		regent = yes
+	}
+}
+
+1795.1.1 = {
+	monarch = {
+		name = "Nafata"
+		dip = 0
+		adm = 3
+		mil = 2
+	}
+}

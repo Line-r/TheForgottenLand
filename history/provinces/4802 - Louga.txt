@@ -1,0 +1,14 @@
+owner = JOL
+controller = JOL
+culture = senegambian
+is_city = yes
+base_manpower = 2
+religion = shamanism #Fetishism
+capital = "Mpal"
+trade_goods = salt
+hre = no
+base_tax = 2
+base_production = 1
+add_core = JOL
+
+discovered_by = sub_saharan

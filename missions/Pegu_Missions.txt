@@ -1,0 +1,1163 @@
+pegu_burmese_expansion_branch = {
+			slot = 3
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = PEG
+						
+						}			
+			has_country_shield = yes
+			
+			
+			pegu_choose_a_meditator_peg = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_alliances
+				
+				trigger = {
+				
+					OR = {
+						
+						AND = {
+							alliance_with = LXA
+								LXA = {
+									has_opinion = {
+										who = ROOT
+										value = 100
+									}
+								}
+							
+							}
+						
+						AND = {
+							alliance_with = AYU
+							AYU = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+							
+						}
+						
+						AND = {
+							alliance_with = MNG
+							MNG = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+							
+						}
+						
+					}
+				
+				}
+					
+				effect = {
+					
+					central_burma_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					2402 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					579 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+					
+					}
+			
+				}
+				
+				
+			conquer_central_burma_peg = {
+			
+				position = 2
+				required_missions = { pegu_choose_a_meditator_peg }
+				icon = mission_advance_to_the_dnieper
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = central_burma_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					central_burma_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					upper_burma_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					chindwin_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+				}
+			
+			}
+			
+			defeat_ava_peg = {
+			
+				position = 3
+				required_missions = {conquer_central_burma_peg}
+				icon = mission_restore_the_pagan_kingdom
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = chindwin_area
+						area = upper_burma_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					upper_burma_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					chindwin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "into_burma_peg"
+						duration = 7300
+					
+					}
+					
+					kachin_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					assam_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					naga_hills_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					shan_hill_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					karenni_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			mountains_campaign = {
+			
+				position = 4
+				required_missions = {defeat_ava_peg}
+				icon = mission_fortify_rajputana
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = assam_area
+						area = naga_hills_area
+						area = kachin_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+
+					assam_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					naga_hills_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					kachin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				}
+				
+				effect = {
+				
+					bhutan_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					add_country_modifier = {
+					
+						name = "mountaineers_peg"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			defeat_the_shan_peg = {
+			
+				position = 5
+				required_missions = {mountains_campaign}
+				icon = mission_a_million_rice_fields
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = karenni_area
+						area = shan_hill_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					karenni_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					shan_hill_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "shan_conquest_peg"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			
+}
+
+pegu_arakan_bengal_branch = {
+			slot = 2
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = PEG
+						
+						}			
+			has_country_shield = yes
+			
+			end_arakan_piracy = {
+			
+				position = 2
+				required_missions = { pegu_choose_a_meditator_peg }
+				icon = mission_retake_ceuta
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 2402
+						province_id = 579
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					2402 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					579 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = flavor_peg.1 }
+				
+				}
+			
+			}
+			
+			
+			trade_in_bengal_peg = {
+			
+				position = 3
+				required_missions = {end_arakan_piracy}
+				icon = dominant_economy
+				
+				trigger = {
+				
+					hidden = {
+				
+						NOT = {
+						
+							has_country_flag = denied_bengal_alliance_flag
+					
+						}
+					
+					}
+					
+					1343 = { #Ganges Delta, Bengal
+						trade_share = {
+							country = PEG
+							share = 25
+						}
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "bengal_trade_boom_peg"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			negotiate_for_chittagong = {
+			
+				position = 4
+				required_missions = { trade_in_bengal_peg }
+				icon = mission_bengal_entrepot
+				
+				trigger = {
+				
+					BNG = {
+					exists = yes
+					is_at_war = no
+					NOT = { is_subject_of = ROOT }
+					has_opinion = { who = ROOT value = 175 }
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					BNG = {
+					
+						country_event = { id = flavor_bng.13 }
+					
+					}
+				
+				}
+			
+			}
+			
+			spread_the_good_word_to_bengal_peg = {
+			
+				position = 5
+				required_missions = {negotiate_for_chittagong}
+				icon = mission_conquer_rewakantha
+				
+				trigger = {
+	
+					BNG = {
+					
+						exists = yes
+						is_at_war = no
+						religion_group = muslim
+					
+					}
+					
+					PEG = {
+					
+						religion_group = buddhist
+						religious_unity = 1
+					
+					}
+				
+				}
+				
+				effect = {
+				
+					BNG = {
+					
+						country_event = { id = flavor_bng.14 }
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+pegu_bengal_expansion = {
+			slot = 1
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = PEG
+						
+						}			
+			has_country_shield = yes
+			
+			
+			sieze_chittagong = {
+			
+				position = 3
+				required_missions = {end_arakan_piracy}
+				icon = mission_african_gold
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 568
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					hidden = {
+				
+						NOT = {
+						
+							has_country_flag = allied_bengal_flag
+					
+						}
+					
+					}
+					
+					568 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					tripura_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					west_bengal_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					east_bengal_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			expand_in_bengal = {
+			
+				position = 4
+				required_missions = {sieze_chittagong}
+				icon = mission_asian_trader
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = tripura_area
+						area = west_bengal_area
+						area = east_bengal_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					tripura_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					west_bengal_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					east_bengal_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					north_bengal_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					gaur_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					add_country_modifier = {
+					
+						name = "bengal_campaign_peg"
+						duration = 3650
+					
+					}
+				
+				}
+			
+			}
+			
+			defeat_bengal_peg = {
+				
+				position = 5
+				required_missions = {expand_in_bengal}
+				icon = mission_bengal_campaign
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = gaur_area
+						area = north_bengal_area
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					gaur_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					north_bengal_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					552 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+						}
+						
+					add_country_modifier = {
+					
+						name = "bengal_defeated_peg"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+
+			
+}
+
+pegu_thai_and_shan_expansion = {
+			slot = 4
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = PEG
+						
+						}			
+			has_country_shield = yes
+			
+			
+			take_sukhothai_peg = {
+			
+				position = 2
+				required_missions = {pegu_choose_a_meditator_peg}
+				icon = mission_prepare_an_invasion_force
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 601
+			
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					601 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					northern_thai_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			take_northern_thailand_peg = {
+			
+				position = 3
+				required_missions = {take_sukhothai_peg}
+				icon = mission_secure_khandesh
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = northern_thai_area
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					northern_thai_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					central_thai_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					north_tenasserim_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			
+			go_after_ayutthaya_peg = {
+			
+				position = 4
+				required_missions = {take_northern_thailand_peg}
+				icon = mission_conquer_siam
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = central_thai_area
+						area = north_tenasserim_area
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					central_thai_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					north_tenasserim_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					khorat_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					south_laos_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					north_laos_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					mekong_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					cambodia_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					champa_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_laos_peg = {
+			
+				position = 5
+				required_missions = { go_after_ayutthaya_peg}
+				icon = fixed_garrison_system
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = khorat_area
+						area = north_laos_area
+						area = south_laos_area
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+		
+				trigger = {
+				
+					khorat_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					north_laos_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					south_laos_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					red_river_delta_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					vietnam_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			into_china_peg = {
+			
+				position = 6
+				required_missions = {defeat_the_shan_peg conquer_laos_peg take_cambodia}
+				icon = mission_kowtow
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						region = xinan_region
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 10
+						region = xinan_region
+					}
+				
+				}
+				
+				effect = {
+				
+					guangxi_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					west_guangdong_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					guangdong_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			conquer_guangdong_peg = {
+			
+				position = 7
+				required_missions = {into_china_peg}
+				icon = mission_entrepot_of_india
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = guangxi_area
+						area = west_guangdong_area
+						area = guangdong_area
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					guangxi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					west_guangdong_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					guangdong_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					1816 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+						add_permanent_claim = ROOT
+				
+					}
+					
+					add_country_modifier = {
+					
+						name = "conquest_of_canton_peg"
+						duration = 7300
+					
+					}
+				
+				}
+			
+			}
+			
+			pegu_empire_peg = {
+			
+				position = 8
+				required_missions = {conquer_guangdong_peg}
+				icon = mission_conquer_lower_burma_tau
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 1816
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+				NOT = {
+					OR = {
+					
+						has_mission = spread_the_good_word_to_bengal_peg
+						has_mission = defeat_bengal_peg
+					
+					}
+					
+				}
+					
+					1816 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "pegu_empire_peg"
+						duration = -1
+					
+					}
+				
+				}
+			
+			}
+
+}
+
+pegu_indochina_expansion_branch = {
+			slot = 5
+			generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				
+						tag = PEG
+						
+						}			
+			has_country_shield = yes
+			
+			
+			take_cambodia = {
+			
+				position = 5
+				required_missions = {go_after_ayutthaya_peg}
+				icon = mission_a_million_elephants
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = mekong_area
+						area = cambodia_area
+						area = champa_area
+				
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				
+				trigger = {
+				
+					champa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					cambodia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					mekong_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+					
+					add_treasury = 300
+				
+				}
+			
+			}
+
+
+}

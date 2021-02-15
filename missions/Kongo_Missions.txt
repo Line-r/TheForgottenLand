@@ -1,0 +1,1741 @@
+kongo_modern_branch = {
+		slot = 1
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			kongo_modernization_kon = {
+			
+			position = 3
+			required_missions = {  }
+			icon = mission_early_modern_university
+			
+			trigger = {
+			
+					NOT = {
+						current_age = age_of_discovery
+					}
+					
+					is_tribal = no
+					NOT = {
+						government = native
+					}
+					custom_trigger_tooltip = {
+						tooltip = nw_modern.tooltip
+						any_neighbor_country = {
+							has_institution = feudalism
+							NOT = {
+								tech_difference = 1
+							}
+						}
+					}
+			
+				}
+				
+			effect = {
+			
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			
+				}
+			
+			}
+			
+			modern_capital_kon = {
+			
+			position = 4
+			required_missions = {kongo_modernization_kon}
+			icon = mission_early_game_buildings
+			
+			trigger = {
+			
+					capital_scope = {
+						development = 30
+						has_building = university
+					}
+			
+				}
+				
+			effect = {
+			
+				capital_scope = {
+			
+				add_province_modifier = {
+				name = "univerity_capital_kon"
+				duration = -1
+					
+					}
+					
+				}
+			
+			}
+			
+			
+		}
+
+}
+
+kongo_expansion_mission_main = {
+		slot = 3
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			prepare_a_army_kon = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_african_soldier
+			
+				trigger = {
+			
+					army_size_percentage = 1
+					manpower_percentage = 0.50
+					num_of_generals = 1
+			
+					}
+					
+				effect = {
+				
+					lower_kasai = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					kasai_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					matamba_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+					add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			take_kasai_kon = {
+			
+				position = 2
+				required_missions = {prepare_a_army_kon}
+				icon = mission_war_chest
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = kasai_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+			
+					kasai_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+			
+					}
+				
+				effect = {
+			
+				add_adm_power = 100
+			
+					}
+			
+				}
+				
+				kongo_centralised_nation = {
+			
+				position = 3
+				required_missions = {take_kasai_kon  take_lower_kasai_kon  take_matamba}
+				icon = mission_monarch_in_throne_room
+			
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 1166
+						province_id = 1171
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+			
+					1166 = {
+						country_or_non_sovereign_subject_holds = ROOT
+							}
+							
+					1171 = {
+						country_or_non_sovereign_subject_holds = ROOT
+							}	
+			
+				}
+				
+				effect = {
+				
+					sankuru_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					chokwe_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4097 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4105 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4099 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4098 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4101 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4100 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					4103 = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+					
+					
+				
+				}
+				
+				
+			
+			}
+			
+			kongo_united_kon = {
+			
+				position = 4
+				required_missions = {kongo_centralised_nation}
+				icon = mission_unite_home_region
+			
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 4097
+						province_id = 4105
+						province_id = 4099
+						province_id = 4098
+						province_id = 4101
+						province_id = 4100
+						province_id = 4103
+						area = sankuru_area
+						area = chokwe_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+			
+				trigger = {
+			
+					4097 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4105 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4099 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4098 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4101 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4100 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4103 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					chokwe_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+							
+					sankuru_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+			
+					}
+					
+					effect = {
+					
+						add_country_modifier = {
+							name = "united_kongo_kon"
+							duration = -1
+					
+						}
+						
+						central_africa_region = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+								}
+					
+							add_permanent_claim = ROOT
+				
+							}
+
+						4080 = {
+						
+							change_trade_goods = grain
+						
+						}
+						
+						1168 = {
+						
+							change_trade_goods = grain
+						
+						}
+						
+						1171 = {
+						
+							change_trade_goods = gems
+						
+						}
+						
+						2948 = {
+						
+							change_trade_goods = grain
+						
+						}
+						
+						4085 = {
+						
+							change_trade_goods = grain
+						
+						}
+						
+						4087 = {
+						
+							change_trade_goods = grain
+						
+						}
+						
+						4083 = {
+						
+							change_trade_goods = livestock
+						
+						}
+						
+						4082 = {
+						
+							change_trade_goods = livestock
+						
+						}
+						
+						4084 = {
+						
+							change_trade_goods = copper
+						
+						}
+					
+					}
+			
+				}
+				
+				invade_central_africa_kon = {
+				
+					position = 5
+					required_missions = {kongo_united_kon}
+					icon = mission_invade_kanem
+					
+					provinces_to_highlight = {
+					OR = {
+			
+						region = central_africa_region
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						central_africa_region = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						butua_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						zimbabwe_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4047 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						upper_zambezi_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						shire_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}		
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4045 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4044 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4037 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4048 = {
+							limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+						4034 = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+					
+					}
+					
+					
+				
+				}
+				
+				into_the_zambezi_kon = {
+				
+					position = 6
+					required_missions = {invade_central_africa_kon}
+					icon = mission_dominate_home_trade_node
+					
+					provinces_to_highlight = {
+					OR = {
+			
+						area = butua_area
+						area = zimbabwe_area
+						area = upper_zambezi_area
+						area = shire_area
+						province_id = 4045
+						province_id = 4044
+						province_id = 4037
+						province_id = 4048
+						province_id = 4034
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+					trigger = {
+					
+						butua_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						zimbabwe_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						upper_zambezi_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						shire_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4045 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4044 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4037 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4048 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+						4034 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+					
+					effect = {
+					
+						mozambique_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+						mombasa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+						central_swahili_coast_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+						add_country_modifier = {
+						
+						name = "zambezi_trade_kon"
+						duration = 5475
+						
+						}
+					
+					}
+				
+				}
+				
+				the_mozambique_purchase_kon = {
+				
+				position = 7
+				required_missions = {into_the_zambezi_kon}
+				icon = mission_patronize_art_and_religion
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						province_id = 788
+						province_id = 1195
+						province_id = 4049
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					788 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					1195 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					4049 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+				
+					}
+					
+					effect = {
+					
+							country_event = {id  = toe_flavor_kon_kongo.1 }
+						
+					}
+				
+				}
+				
+				sahel_mission_kon = {
+			
+				position = 10
+				icon = mission_conquer_air
+				required_missions = {kongo_defeat_benin_kon}
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = bornu_area
+						area = kanem_area
+						area = azbin_area
+						area = east_azbin_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					bornu_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					kanem_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					azbin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					east_azbin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					dendi_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					niger_bend_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			timbuktu_campaign_kon = {
+			
+				position = 11
+				required_missions = {sahel_mission_kon}
+				icon = mission_traverse_the_sahara
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = dendi_area
+						area = niger_bend_area
+						
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					dendi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					niger_bend_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+					name = "kongo_african_power"
+					duration = 14600
+					
+					}
+				
+				}
+			
+			}
+
+
+
+
+kongo_expansion_branch_lower_kasai = {
+		slot = 2
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			take_lower_kasai_kon = {
+			
+				position = 2
+				required_missions = {prepare_a_army_kon}
+				icon = mission_invade_island
+				
+				provinces_to_highlight = {
+					OR = {
+			
+						area = lower_kasai
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}		
+				
+				trigger = {	
+			
+					lower_kasai = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+					
+					}
+				
+				effect = {
+			
+				add_treasury = 100
+			
+					}
+			
+				}
+
+
+}
+
+kongo_expansion_matamba = {
+		slot = 4
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			take_matamba = {
+			
+				position = 2
+				required_missions = {prepare_a_army_kon}
+				icon = mission_african_gold
+			
+				provinces_to_highlight = {
+					OR = {
+			
+						area = matamba_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+			
+				trigger = {
+			
+					matamba_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+							}
+			
+					}
+				
+				effect = {
+			
+				add_mil_power = 100
+			
+					}
+			
+				}
+			
+			
+			
+}
+
+kongo_colonial_prep_branch = {
+		slot = 5
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+
+			
+			prepare_a_navy_kon = {
+			
+				position = 1
+				required_missions = {  }
+				icon = mission_establish_high_seas_navy
+				
+				trigger = {
+				
+					navy_size_percentage = 1
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+				
+						name = "kongolese_navy_kon"
+						duration = 5475
+					
+					}
+				
+				}
+				
+			}
+			
+			prepare_to_colonise_kon = {
+			
+				position = 3
+				required_missions = {prepare_a_navy_kon}
+				icon = mission_colonial
+				
+				trigger = {
+				
+					num_of_colonists = 1
+				
+				}
+				
+				effect = {
+				
+					add_dip_power = 75
+				
+				}
+			
+			}
+			
+			southern_provinces_kon = {
+			
+				position = 4
+				required_missions = {prepare_to_colonise_kon}
+				icon = mission_market_place_with_asian_traders
+				
+				
+				
+				trigger = {
+				
+					treasury = 300
+					num_of_colonists = 2
+				
+				}
+				
+				effect = {
+				
+					country_event = { id = toe_flavor_kon_kongo.2 }
+				
+				}
+			
+			}
+			
+			
+}
+
+
+
+kongo_colonial_atlantic_branch = {
+		slot = 4
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			
+			atlantic_foothold_kon = {
+			
+				position = 5
+				required_missions = {southern_provinces_kon  take_matamba}
+				icon = mission_arabian_sea_trade
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						province_id = 1174
+						province_id = 1098
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					1174 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+						
+					1098 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						}
+				
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+						name = "colonial_ambition_kon"
+						duration = 14600
+					
+					}
+				
+				}
+			
+			}
+			
+			what_lies_west_kon = {
+			
+				position = 6
+				required_missions = {atlantic_foothold_kon}
+				icon = mission_launch_a_flagship
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						colonial_region = colonial_brazil
+						
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						colonial_region = colonial_brazil
+						is_city = yes
+					}
+						
+					763 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_city = yes
+						}
+			
+					
+				
+				}
+				
+				effect = {
+				
+					763 = {
+					
+						add_base_production = 3
+						add_dip_power = 100
+					
+					}
+				
+				}
+			
+			}
+			
+			colonise_brazil_kon = {
+			
+			position = 7
+			required_missions = {what_lies_west_kon}
+			icon = mission_found_havana
+			
+			provinces_to_highlight = {
+					OR = {
+		
+						colonial_region = colonial_brazil
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+			
+			trigger = {
+			
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 15
+					colonial_region = colonial_brazil
+					is_city = yes
+					}
+			
+				}
+			
+			
+			
+			effect = {
+			
+				add_country_modifier = {
+				
+				name = "kongolese_brasil_kon"
+				duration = 10950
+				
+					}
+			
+				}
+			
+			}
+			
+			nw_bases_kon = {
+			
+			position = 8
+			required_missions = {colonise_brazil_kon}
+			icon = mission_aragonese_navy
+			
+			provinces_to_highlight = {
+					OR = {
+		
+						province_id = 2890
+						province_id = 2803
+						province_id = 502
+						province_id = 491
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+			
+			trigger = {
+			
+				2890 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = yes
+					}
+					
+				2803 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = yes
+					}
+					
+				502 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = yes
+					}
+					
+				491 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = yes
+					}
+			
+				}
+				
+				effect = {
+				
+					add_country_modifier = {
+					
+					name = "new_world_power_kon"
+					duration = -1
+					
+					}
+				
+				}
+			
+			}
+			
+}
+
+
+
+kongo_colonial_cape_branch = {
+		slot = 5
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+
+			
+			kongo_cape_mission_one_kon = {
+			
+				position = 6
+				required_missions = {atlantic_foothold_kon}
+				icon = mission_rb_take_gibraltar
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						region = south_africa_region
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 15
+						region = south_africa_region
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					add_mercantilism = 10
+				
+				}
+			
+			}
+			
+			kongo_maldives_mission = {
+			
+				position = 7
+				required_missions = {kongo_cape_mission_one_kon}
+				icon = mission_sea_battles
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						province_id = 1248
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					
+				trigger = {
+				
+					1248 = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					coromandel_region = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+					
+						add_permanent_claim = ROOT
+				
+					}
+				
+				}
+			
+			}
+			
+			
+}
+
+
+
+kongo_zanzibar_mission = {
+		slot = 2
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			take_zanzibar_kon = {
+			
+				position = 7
+				required_missions = {into_the_zambezi_kon}
+				icon = mission_mosque
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = central_swahili_coast_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					central_swahili_coast_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+				
+				}
+				
+				effect = {
+				
+					1201 = {
+					
+						add_center_of_trade_level = 1
+					
+					}
+					
+					add_dip_power = 150
+				
+				}
+			
+			}
+
+
+}
+
+
+
+kongo_mombasa_mission = {
+		slot = 1
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			monopolise_mombasa_kon = {
+			
+				position = 7
+				required_missions = {into_the_zambezi_kon}
+				icon = mission_junk_boat
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = mombasa_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					mombasa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+				add_treasury = 200
+				add_mercantilism = 3
+				
+				}
+			
+			}
+			
+			
+}
+
+
+
+kongo_west_africa_branch = {
+		slot = 2
+		generic = no
+			ai = yes
+			potential = {
+				NOT = { map_setup = map_setup_random }
+				tag = KON
+			}
+			has_country_shield = yes
+			
+			
+			kongo_gulfofguinea_mission = {
+			
+				position = 3
+				required_missions = {  }
+				icon = indonesian_trade
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = gulf_of_guinea_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 4
+						area = gulf_of_guinea_area
+						is_city = yes
+					}
+				
+				}
+				
+				effect = {
+				
+					benin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			kongo_defeat_benin_kon = {
+			
+				position = 4
+				required_missions = {kongo_gulfofguinea_mission}
+				icon = mission_conquer_benin
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = benin_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					benin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+
+				}
+				
+				effect = {
+				
+					add_treasury = 350
+					
+					lower_niger_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					hausa_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					katsina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					zazzau_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					atacora_oueme_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					bornu_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					kanem_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					east_azbin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					azbin_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			invade_the_niger_kon = {
+			
+				position = 5
+				required_missions = {kongo_defeat_benin_kon}
+				icon = mission_west_african_ports
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = hausa_area
+						area = katsina_area
+						area = zazzau_area
+						area = lower_niger_area
+						area = atacora_oueme_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					hausa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					katsina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					zazzau_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					lower_niger_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					atacora_oueme_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					lower_volta_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					upper_volta_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					kong_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					jenne_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					massina_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+						
+					manding_area = {
+							limit = {
+								NOT = { is_permanent_claim = ROOT }
+								NOT = { is_core = ROOT }
+							}
+							add_permanent_claim = ROOT
+				
+						}
+				
+				}
+			
+			}
+			
+			
+			kongo_mali_empire_lands_kon = {
+			
+				position = 6
+				required_missions = {invade_the_niger_kon}
+				icon = mission_invade_mali
+				
+				provinces_to_highlight = {
+					OR = {
+		
+						area = lower_volta_area
+						area = upper_volta_area
+						area = kong_area
+						area = jenne_area
+						area = massina_area
+						area = manding_area
+			
+					}			
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				
+				trigger = {
+				
+					lower_volta_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					upper_volta_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					kong_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					jenne_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					massina_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					
+					manding_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				
+				}
+				
+				effect = {
+				
+					if = {
+						limit = {
+							NOT = {
+								government_rank = 3
+							}
+						}
+						set_government_rank = 3
+					}
+					
+					add_mil_power = 200
+				
+				}
+			
+			}
+
+
+}

@@ -1,0 +1,96 @@
+country_decisions = {
+
+somali_nation = {
+
+major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = kitara_nation_flag }
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				ai = yes
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = SAI }
+			OR = {
+				ai = no
+				AND = {
+					NOT = { exists = SAI }
+					
+				}
+			}
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			is_colonial_nation = no
+			primary_culture = somali
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		
+			provinces_to_highlight = {
+					OR = {
+						province_id = 1209 #Berbera
+						province_id = 2788 #Hafun
+						province_id = 1207 #Ogaden
+						province_id = 1205 #Mogadishu
+						province_id = 2775 #Merca
+						province_id = 1212 #Zeila
+						
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}	
+		
+		allow = {
+			
+			
+			NOT = { exists = SAI }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+				owns_core_province = 1209 #Berbera
+				owns_core_province = 2788 #Hafun
+				owns_core_province = 1207 #Ogaden
+				owns_core_province = 1205 #Mogadishu
+				owns_core_province = 2775 #Merca
+				owns_core_province = 1212 #Zeila
+			
+		
+		}
+		
+			effect = {
+			change_tag = SAI
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			
+			
+		
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 33
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = SAI_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = somali_nation_flag 
+			swap_non_generic_missions = yes
+		}
+
+	}
+
+}

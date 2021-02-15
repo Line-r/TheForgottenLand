@@ -1,0 +1,23 @@
+owner = GAA
+controller = GAA
+add_core = GAA
+is_city = yes
+culture = aka 
+religion = shamanism #Fetishism
+capital = "Sampa"
+trade_goods = tropical_wood
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+
+
+
+discovered_by = sub_saharan
+
+
+1735.1.1 = {
+	owner = ASH
+	controller = ASH
+	add_core = ASH
+} #Ashanti conquest

@@ -1,0 +1,18 @@
+owner = ZAF       # Who is the current owner of the province
+controller = ZAF    # Who is the current controller of the province
+add_core = ZAF      # Adds a core for the specified tag
+is_city = yes      # Whether this province is a proper city, i.e. not a colony. 
+
+culture = soninke     # The culture of the province
+religion = sunni   # The religion of the province
+
+base_tax = 1        # The base tax of the province
+base_production = 2 # The base production of the province
+base_manpower = 1 # The base manpower of the province
+
+trade_goods = livestock   # The tradegood assigned to this province, from 00_tradegoods.txt
+hre = no          # Whether this province is in the HRE or not
+capital = "Tamchekett"    # The capital name to use for the province, otherwise the province name is used as the capital name.
+
+discovered_by = sub_saharan  # Grants the specified technology group vision of this province
+unrest = 0  # Adds base unrest           
