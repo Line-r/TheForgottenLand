@@ -605,13 +605,22 @@ central_asia_region = {
 
 south_africa_region = {
 	areas = {
-		south_african_plateau_area
+		namibia_coast
+		kwaxhosa_area
+		kwazulu_area
+		nama_karoo_area
+		lesotho_area
+		borwa_botswana_area
+		bopedi_area
+		eswatini_area
+		xitsonga_area
+		matabele_area
+		ora_area
 		cape_of_good_hope_area
 		zimbabwe_area
 		quelimane_area
 		butua_area
 		limpopo_area
-		transvaal_area
 	}
 	monsoon = {
 		00.11.01

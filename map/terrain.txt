@@ -191,7 +191,7 @@ categories =  {
 			2965 2976 2977 2978 2983 2984 2991 3002
 			242 4366 #British Isles
 			250 251 4361 4362 4363 #Scotland
-			4023 #Madagascar
+			1792 4023 #Madagascar
 			4046 4050 4063 4066 4068 4069 4070 4072 4098 4102 #Central Africa
 			156 1951 #Carpathians
 			4144 4145 4164 #Scandinavia
@@ -348,8 +348,6 @@ categories =  {
 			4653 4655 4656 4680 4679
 			# 1.30
 			4750 4754
-			#Africa - Mod
-			1792
 		}
 	}
 
@@ -454,7 +452,7 @@ categories =  {
 			534 535 537 2028 2029 2050 4410 4412 4413 4438 4439 4444 #South India
 			2099 2100 4407 4408 4409 #Ceylon
 			2731 2732 #Australia
-			4024 4025 4026 #Madagascar
+			4021 4024 4025 4026 #Madagascar
 			4090 4105 4109 #Central Africa
 			4794 #Kong
 		}
@@ -619,7 +617,6 @@ categories =  {
 			4411 4421 4435 4437 4454 4455 4456 4463 4503 4504 4505 4509 #India
 			4549 4562 4563 4564 4547 4557# new provinces 1.28
 			4628 4630 # new provinces Mesoamerica 1.28
-			1194 4021 4022 #Africa - Mod
 		}
 	}
 

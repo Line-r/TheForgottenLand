@@ -17,6 +17,9 @@ SMI = "countries/Sami.txt"
 KRL = "countries/Karelia.txt"
 ICE = "countries/Iceland.txt"
 
+#SouthAfrica
+SAF	= "countries/South Africa.txt"
+
 #Balkans
 ACH	= "countries/PrincipalityOfAchaia.txt"
 ALB	= "countries/Albania.txt"

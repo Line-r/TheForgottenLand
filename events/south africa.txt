@@ -1,0 +1,104 @@
+namespace = south_africa
+
+country_event = {
+	id = south_africa.1
+	title = "south_africa.1t"
+	desc = "south_africa.1d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		num_of_subjects = 1
+		any_subject_country = {
+			is_colonial_nation_of = ROOT
+			capital_scope = { region = south_africa_region }
+			NOT = { 
+				is_subject_of_type = cape_colony
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = { 
+					is_colonial_nation_of = ROOT
+					capital_scope = { region = south_africa_region }
+					NOT = { 
+						is_subject_of_type = cape_colony
+					}
+				}
+				save_event_target_as = cape_colony_creation
+				
+			}
+		}
+	}
+	
+	option = {
+		name = "south_africa.1a"
+		create_subject = {
+			subject_type = cape_colony
+			subject = event_target:cape_colony_creation
+		
+		}
+		
+	}
+	
+}
+
+province_event = {
+	id = south_africa.2
+	title = "south_africa.2t"
+	desc = "south_africa.2d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		OR = {
+			culture = dutch
+			culture = frisian
+			culture = flemish
+			}
+			
+		owner = {
+			primary_culture = afrikaner
+		}
+		NOT = {
+			continent = europe
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 20
+		
+	}
+	
+	
+	option = {
+		name = "south_africa.2a"
+		change_culture = afrikaner
+		
+	}
+	
+}
+
+country_event = {
+	id = south_africa.3
+	title = "south_africa.3t"
+	desc = "south_africa.3d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = "south_africa.3a"
+		add_prestige = 10
+		add_stability_or_adm_power = yes
+		
+	}
+	
+}
+
