@@ -1500,8 +1500,8 @@ ngonde_area = { #3
 	4041 4044 4045
 }
 
-mozambique_area = { #3
-	788 1195 4049
+mozambique_area = { #4
+	788 1195 4049 4020
 }
 
 uticulo_makuana_area = { #3
@@ -1675,8 +1675,8 @@ majarteen_area = { #5
 # South-Eastern Islands				   #
 ########################################
 
-mascarenes_area = { #4
-	1100 1102 1103 4020
+mascarenes_area = { #3
+	1100 1102 1103
 }
 
 indian_ocean_islands_area = { #5
@@ -1896,17 +1896,60 @@ kongo_area = { #5
 }
 
 angola_namibia_area = { #4
-    1167 1171 1172 1174 
+    1167 1171 1172  
+}
+
+########################################
+# South Africa					       #
+########################################
+
+namibia_coast = {
+	1174 4829 4830 4831 4832
 }
 
 cape_of_good_hope_area = { #5
-	833 1175 1177 1179 1180
+	1177 1179 4817 4818
 }
 
-south_african_plateau_area = { #5
-	1176 1178 2856 2880 2864
+kwaxhosa_area = {
+ 1180 833 4819 4820
 }
 
+kwazulu_area = {
+ 1181 789 4821 4822
+}
+
+nama_karoo_area = {
+ 1175 1176 1178 2864
+}
+
+lesotho_area = {
+ 2856 4823 4824 4825
+}
+
+borwa_botswana_area = {
+	4781 4782 4826
+}
+
+bopedi_area = {
+	4784 4833 4834 4835
+}
+
+eswatini_area = {
+ 4783 4837 4838 4839
+}
+
+xitsonga_area = {
+ 1800 1183 1182 4836
+}
+
+matabele_area = {
+	4840 4841 4842 
+}
+
+ora_area = {
+	2880 4827 4828 
+}
 
 ########################################
 # Greater Persia		               #
@@ -3616,9 +3659,6 @@ windward_islands_area = { #5
     497 498 499 500 501
 }
 
-transvaal_area = { #4
-	4781 4782 4783 4784
-}
 
 #############################
 #Deprecated:

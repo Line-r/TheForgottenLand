@@ -17652,3 +17652,46 @@ south_african_ideas = {
 	}
 
 }
+
+south_africa_ideas = {
+	start = {
+		colonists = 1
+		trade_efficiency = 0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}	
+
+	trigger = {
+		tag = SAF
+	}
+	free = yes
+	
+	SAF_free_burhgers = {
+		development_cost = -0.10
+		burghers_loyalty_modifier = 0.05
+	}
+	saf_great_trek = {
+		land_morale = 0.15
+	}
+	saf_south_african_mines = {
+		global_trade_goods_size_modifier = 0.10
+	}
+	saf_diamonds = {
+		inflation_reduction = 0.1
+		production_efficiency = 0.05
+	}
+	saf_legacy_of_VOC = {
+		merchants = 1
+	}
+	saf_east_indian_trade_route = {
+		trade_steering = 0.2
+	}
+	saf_independence = {
+		legitimacy = 1
+		republican_tradition = 0.3
+		devotion = 1
+		horde_unity = 1
+	}
+}

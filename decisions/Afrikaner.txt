@@ -1,0 +1,83 @@
+country_decisions = {
+
+	afrikaner_culture = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = frisian
+				primary_culture = dutch
+				primary_culture = flemish
+			}
+			
+			capital_scope = {
+				colonial_region = trade_company_south_africa
+				is_core = ROOT
+			}
+		}
+		
+		allow = {
+			OR = {
+				is_free_or_tributary_trigger = yes
+				tag = SAF
+			}
+			is_at_war = no					
+			custom_trigger_tooltip = {
+				num_of_owned_provinces_with = {
+					is_core = ROOT
+					OR = {
+						culture = frisian
+						culture = dutch
+						culture = flemish
+					}
+					value = 6
+				}
+			}
+		}
+		effect = {
+			change_primary_culture = afrikaner
+			set_ruler_culture = afrikaner
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				set_heir_culture = afrikaner
+			}
+			if = {
+				limit = {
+					has_consort = yes
+					OR = {
+						consort_culture = frisian
+						consort_culture = dutch
+						consort_culture = flemish
+					}
+				}
+				set_consort_culture = afrikaner
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = frisian
+							culture = dutch
+							culture = flemish
+						}
+					}
+					change_culture = afrikaner
+				}
+				
+			}
+			
+			add_country_modifier = {
+				name = "south_african_identity"
+				duration = -1
+			}
+			add_prestige = 25
+			country_event = { id = south_africa.3 }
+		}
+		ai_importance = 500		
+	}
+
+
+
+
+} #End of country decisions
