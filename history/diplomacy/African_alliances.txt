@@ -286,9 +286,21 @@ vassal = {
 	end_date = 1500.1.1
 }
 
+#Songhai
+
 vassal = {
 	first = SON
 	second = AGH
 	start_date = 1444.1.1
 	end_date = 1591.3.15
+}
+
+#Madagascar
+
+dependency = {
+	subject_type = "tributary_state"
+	first = BIA
+	second = AHK
+	start_date = 1444.1.1
+	end_date = 1821.1.1
 }
