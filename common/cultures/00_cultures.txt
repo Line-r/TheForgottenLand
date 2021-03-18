@@ -7722,7 +7722,132 @@ west_african = {
 		}
 	}
 }	
+Khoisan = {
+  graphical_culture = africangfx
+  KhoeKhoe = {
+	
+  }
+  
+  San = {
+  
+  }
+  
+  Nama = { 
+  
+  }
+		dynasty_names = { 
+		"/Han kass'o" Gonnema  "!Kau-/kutten" "Kebbi-an" "!Kwabba-an" "/Hari Kafsho" Mansse "!Kau/noan" "/Abbe-ttu" "//Khwai-/ha" Tssatssi  "!Nanni" "/Uma" Da
+		
+		}
+		male_names = { 
+		Atshumao Oedesoa Gogosoa Osinhkimma Otegnoa  Khuma Krotoa Geoboe "/Alkunta" "//Kabbo" Uhi-ddoro Kasin "!Kweiten-ta-//ken" "Xa-a-tin"
+		}
+		female_names = {
+		Atshumao Oedesoa Gogosoa Osinhkimma Otegnoa  Khuma Krotoa Geoboe "/Alkunta" "//Kabbo" Uhi-ddoro Kasin "!Kweiten-ta-//ken" "Xa-a-tin"
+		}
+}
+nguni_new = {
+	swatini = {
+		dynasty_names	= {
+		Gamedze Fakudze Ngcamphalala Magagula
+		}
+		
+		male_names	= {  
+		Bonginkosi Kagiso Bhekizizwe Bhekmbuso Shaka Shaka Kgabu Gatsha Langa Phila Msizi Nkosiyabo Linda Mpilo Siyanda Nkanyezi Sipho
+		Bafana Lwandle Sfiso Thulani Thando Sanele Anele Lungelo Dumisani Bangizwe Fanyana Fanyana Mpumelelo Mthunzi Nkosenye Zithulele
+		}
+		female_names = { 
+		Ayanda Uluthando Nofoto Yibanathi Thadie Ulwazi Lerato Amahle Khulekani Jabulile Inyoni Zobuhle Nonhlanhla Liyana  Buhle Zanele
+		}
+	
+	}
+	zulu_culture = {
+		dynasty_names	= {
+		 Zulu Duma Mbatha Zuma Hlela Hlabisa Goba Hlongwa Zindela Thembela Thwala Yengwa Chiliza Lamula Khumbuza Mthimkhulu Nkabinde Mashiyamahle Mabelemade
+		 Dlamini Khumalo Buthelezi
+		} 
+		
+		male_names	= {  
+		Bonginkosi Kagiso Bhekizizwe Bhekmbuso Shaka Shaka Kgabu Gatsha Langa Phila Msizi Nkosiyabo Linda Mpilo Siyanda Nkanyezi Sipho
+		Bafana Lwandle Sfiso Thulani Thando Sanele Anele Lungelo Dumisani Bangizwe Fanyana Fanyana Mpumelelo Mthunzi Nkosenye Zithulele
+		}
+		female_names = { 
+		Ayanda Uluthando Nofoto Yibanathi Thadie Ulwazi Lerato Amahle Khulekani Jabulile Inyoni Zobuhle Nonhlanhla Liyana  Buhle Zanele
+		}
+	
+	
+	}
+	mtetwa_culture = {
+		dynasty_names	= {
+		 Duma Mbatha Zuma Hlela Hlabisa Goba Hlongwa Zindela Thembela Thwala Yengwa Chiliza Lamula Khumbuza Mthimkhulu Nkabinde Mashiyamahle Mabelemade
+		 Dlamini Khumalo Buthelezi
+		} 
+		
+		male_names	= {  
+		Bonginkosi Kagiso Bhekizizwe Bhekmbuso Shaka Shaka Kgabu Gatsha Langa Phila Msizi Nkosiyabo Linda Mpilo Siyanda Nkanyezi Sipho
+		Bafana Lwandle Sfiso Thulani Thando Sanele Anele Lungelo Dumisani Bangizwe Fanyana Fanyana Mpumelelo Mthunzi Nkosenye Zithulele
+		}
+		female_names = { 
+		Ayanda Uluthando Nofoto Yibanathi Thadie Ulwazi Lerato Amahle Khulekani Jabulile Inyoni Zobuhle Nonhlanhla Liyana  Buhle Zanele
+		}
+	
+	
+	}
+	xhosa_culture = {
+		dynasty_names = { 
+			AmaGqunukhweba AmaRigwa AmaHigwa AmaMpondo AmaMpondomise AmaBomvana AmaFingo AmaXesibe AmaQadi AmaFingwa
+		}
+		male_names = {
+			Themba Uuka Thandiwe Nomlanga Bathandwa Daluxolo Esihle Fezile Gcobani Akhona Anathi Aphiwe Aviwe Ayabonga Bhutana Bonginkosi Bulelani
+			Dumisa Fezekile Fezile Fundani Gugulethu Jongikhaya Khwezi Khuselwa Langa Lonwabo Lubabalo Luthando Luzuko Lwazi Mabhuti Madoda Malibongwe
+			 
+			}
+		female_names = { 
+			Anathi 	Akhona	Aphiwe Babalwa Bathandwa Buhle Bongani Esihle Fezeka Fundiswa
+			
+			}
+	}
+}
 
+SothoTswana = {
+	sotho = {
+		dynasty_names = { 
+			Bafula Bahlakoana Baphalane Baphuthing Makhoakhoa Basia Bakhatla Bakgatla Bakoena Banareng Bafokeng Bataung Bakubung Batloung
+		} 
+		male_names = {  
+			Akanyang Akanyang Baboloki Baruti Boipelo Dineo Fenyang Gaone Goitseone Kabo Kagiso Kefenste Kgalefa Kgosie Khumo Kopano Letsego Matshwenyego Mmoloki Mmusi
+			Modise Moeng Mokgosi Molefi Morapedi Mosegi Mothibi Mykel Ngaka Obonye Olebile Olebogeng Phefo Pono Salekany Tan Tapiwa Tapologo Tau Thabo Tshenolo
+		} 
+		female_names = {
+			Barulaganye Boipelo Bontle Botshelo Dikeledi Goitsemedi Gouta Itumeleng Keabetswe Keeya Keitumetse Keletso Lesedi
+		}
+	}
+	tswana = {
+		dynasty_names = { 
+			Bakhatla Bakgatla Bakoena Banareng Batawana Bafokeng Bataung Bakgalagadi Babirwa Batabe Bahurutshe
+		}
+		
+		male_names = {  
+			Akanyang Akanyang Baboloki Baruti Boipelo Dineo Fenyang Gaone Goitseone Kabo Kagiso Kefenste Kgalefa Kgosie Khumo Kopano Letsego Matshwenyego Mmoloki Mmusi
+			Modise Moeng Mokgosi Molefi Morapedi Mosegi Mothibi Mykel Ngaka Obonye Olebile Olebogeng Phefo Pono Salekany Tan Tapiwa Tapologo Tau Thabo Tshenolo
+		} 
+		female_names = {
+			Barulaganye Boipelo Bontle Botshelo Dikeledi Goitsemedi Gouta Itumeleng Keabetswe Keeya Keitumetse Keletso Lesedi
+		}
+	}
+	pedi = { 
+		dynasty_names = { 
+			Bakone Batau Bakopa Bapai Mapulana Bakutswe Bagananwa Bapedi Bakgaga Baroka Bataung
+		}
+		male_names = {  
+			Akanyang Akanyang Baboloki Baruti Boipelo Dineo Fenyang Gaone Goitseone Kabo Kagiso Kefenste Kgalefa Kgosie Khumo Kopano Letsego Matshwenyego Mmoloki Mmusi
+			Modise Moeng Mokgosi Molefi Morapedi Mosegi Mothibi Mykel Ngaka Obonye Olebile Olebogeng Phefo Pono Salekany Tan Tapiwa Tapologo Tau Thabo Tshenolo
+		} 
+		female_names = {
+			Barulaganye Boipelo Bontle Botshelo Dikeledi Goitsemedi Gouta Itumeleng Keabetswe Keeya Keitumetse Keletso Lesedi
+		}
+	}
+}
 southern_african = {
 	graphical_culture = africangfx
 	makua = {
@@ -7738,20 +7863,8 @@ southern_african = {
 			Achieng Nuru Nyalak
 		}
 	}
-	nguni = {
-		dynasty_names = { 
-			Mwenemutapa Rozwi Mutopa
-		}
-		male_names = {
-			Mbire Matope Mavura Mukombero Changamire Kakuyo Neshangwe Chivere Chirisamhuru Gatsi Nyambo Siti 
-			Kamborapasu Dombo Chinkura Nechisake Nechagadzike Mambo Rupanadamananga Gumboremvura Toloa Matuzvianye 
-			Mukombwe Nyamhandu Basvi Tohwechipi Nyatsimba Ngwato Molwa Tamasiga Seogola Mucombo Inhamunda Ningomoxa 
-			Chiraramuro Chombo Peranhe Chicanga Nyacuimbiri Samutumbu Mupunzagutu Gowera Nyarumwe
-		}
-		female_names = {
-			Achieng Nuru
-		}
-	}
+	
+	
 	bemba = {
 		
 	}
@@ -7774,6 +7887,12 @@ southern_african = {
 		female_names = {
 			Achieng Nuru
 		}
+	}
+	machangana = {
+	
+	}
+	matabele = {
+	
 	}
 	nyasa = {
 		primary = MRA
