@@ -2,7 +2,7 @@
 
 culture = nguni
 religion = shamanism #Fetishism
-capital = "Graaff-Reinet"
+capital = "Toutswe"
 trade_goods = unknown
 hre = no
 base_tax = 2 
