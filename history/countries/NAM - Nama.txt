@@ -1,0 +1,22 @@
+government = tribal
+add_government_reform = khoi_tribe
+primary_culture = Nama
+religion = shamanism
+technology_group = south_african_tech
+unit_type = sub_saharan
+capital = 1180	# uMathule
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
+
+

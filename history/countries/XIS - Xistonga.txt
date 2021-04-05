@@ -1,0 +1,30 @@
+government = tribal
+add_government_reform = tribal_despotism
+primary_culture = machangana
+religion = shamanism
+technology_group = south_african_tech
+unit_type = sub_saharan
+capital = 1182	# Matsolo
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 18
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+1444.1.1 = {
+	monarch = {
+		name = "Mbire I"
+		dynasty = "Rozwi"
+		dip = 2
+		adm = 4
+		mil = 4
+	}
+}
+
+

@@ -415,6 +415,7 @@ tribal = {
 				siberian_tribe
 				gond_kingdom
 				great_mongol_state_reform
+				khoi_tribe
 			}
 		}
 		tribal_cultural_values = {

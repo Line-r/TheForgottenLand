@@ -1,0 +1,45 @@
+#Country Name: Please seefilename.
+
+graphical_culture = africangfx
+
+color = { 219 175  140 }
+revolutionary_colors = { 7 0 15 }
+
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	offensive_ideas
+	spy_ideas
+	diplomatic_ideas
+	religious_ideas
+	economic_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	african_clubmen
+	bantu_tribal_warfare
+	bantu_plains_warfare
+	bantu_gunpowder_warfare
+	westernized_bantu
+	african_western_franchise_warfare
+	african_somali_cavalry
+	african_abyssinian_cavalry
+	african_abyssinian_light_cavalry
+	african_hussar
+	african_dragoon		
+}
+
+
+monarch_names = {
+
+}
+
+leader_names = {
+	Themba Uuka Thandiwe Nomlanga Bathandwa Daluxolo Esihle Fezile Gcobani Akhona Anathi Aphiwe Aviwe Ayabonga Bhutana Bonginkosi Bulelani
+	Dumisa Fezekile Fezile Fundani Gugulethu Jongikhaya Khwezi Khuselwa Langa Lonwabo Lubabalo Luthando Luzuko Lwazi Mabhuti Madoda Malibongwe
+}
+
+ship_names = {
+Bafula Bahlakoana Baphalane Baphuthing Makhoakhoa Basia Bakhatla Bakgatla Bakoena Banareng Bafokeng Bataung Bakubung Batloung
+}

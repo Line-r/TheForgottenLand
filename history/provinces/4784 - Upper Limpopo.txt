@@ -1,14 +1,20 @@
 #9003 - Upper Limpopo
-
-culture = nguni
+add_core = BPE
+owner = BPE
+controller = BPE
+culture = pedi
 religion = shamanism #Fetishism
-capital = "Polokwane"
-trade_goods = unknown
+capital = "Mapungubwe"
+trade_goods = livestock
+latent_trade_goods = {
+	coal
+}
 hre = no
-base_tax = 1
-base_production = 1
+base_tax = 2
+base_production = 2
 base_manpower = 1
-native_size = 5
-native_ferocity = 1
-native_hostileness = 1
+is_city = yes
+discovered_by = south_african_tech
 discovered_by = east_african
+discovered_by = ZIM
+center_of_trade = 1
