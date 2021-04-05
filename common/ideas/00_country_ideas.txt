@@ -17584,75 +17584,6 @@ MGR_ideas = {
 
 }
 
-south_african_ideas = {
-
-	start = {
-	
-		production_efficiency = 0.10
-		global_manpower_modifier = 0.15
-	
-	}
-	
-	bonus = {
-	
-		global_trade_goods_size_modifier = 0.10
-	
-	}
-	
-	trigger = {
-		OR = {
-		
-			primary_culture = khoisan
-			primary_culture = nguni
-		
-		}
-	}
-	free = yes
-	
-	tribal_absorption_san = {
-	
-		native_assimilation = 0.5
-	
-	}
-	
-	settle_new_lands_san = {
-	
-		global_colonial_growth = 15
-	
-	}
-	
-	ancestral_veneration_san = {
-	
-		stability_cost_modifier = -0.15
-	
-	}
-	
-	warrior_divisions_san = {
-	
-		infantry_power = 0.10
-	
-	}
-	
-	stable_society_san = {
-	
-		global_unrest = -1
-	
-	}
-	
-	bantu_multiculturalism_san = {
-	
-		num_accepted_cultures = 2
-	
-	}
-	
-	zimbabwe_trade_connections_san = {
-	
-		global_own_trade_power = 0.15
-	
-	}
-
-}
-
 south_africa_ideas = {
 	start = {
 		colonists = 1
@@ -17693,5 +17624,85 @@ south_africa_ideas = {
 		republican_tradition = 0.3
 		devotion = 1
 		horde_unity = 1
+		meritocracy = 1
 	}
+}
+
+
+south_african_ideas = {
+
+	start = {
+	
+		production_efficiency = 0.10
+		global_manpower_modifier = 0.15
+	
+	}
+	
+	bonus = {
+	
+		global_trade_goods_size_modifier = 0.10
+	
+	}
+	
+	trigger = {
+		OR = {
+		
+			primary_culture = KhoeKhoe
+			primary_culture = San
+			primary_culture = Nama
+			primary_culture = sotho
+			primary_culture = tswana
+			primary_culture = pedi
+			primary_culture = zulu_culture
+			primary_culture = xhosa_culture
+			primary_culture = swatini
+			primary_culture = mtetwa_culture
+			primary_culture = machangana
+		
+		}
+	}
+	free = yes
+	
+	agriculture_san = {
+	
+		development_cost = -0.1
+	
+	}
+	
+	settle_new_lands_san = {
+	
+		global_colonial_growth = 15
+	
+	}
+	
+	ancestral_veneration_san = {
+	
+		stability_cost_modifier = -0.15
+	
+	}
+	
+	warrior_divisions_san = {
+	
+		infantry_power = 0.10
+	
+	}
+	
+	battle_poetry_san = {
+	
+		power_projection_from_insults = 1
+	
+	}
+	
+	impi_san = {
+	
+		fire_damage_received = -0.10	
+	
+	}
+	
+	zimbabwe_trade_connections_san = {
+	
+		global_own_trade_power = 0.15
+	
+	}
+
 }

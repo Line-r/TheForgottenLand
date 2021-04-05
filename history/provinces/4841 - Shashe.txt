@@ -1,6 +1,6 @@
 # - Graaff-Reinet
 
-culture = nguni
+culture = matabele
 religion = shamanism #Fetishism
 capital = "Shashe"
 trade_goods = unknown

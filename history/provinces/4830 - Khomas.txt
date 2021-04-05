@@ -1,6 +1,6 @@
 # - Graaff-Reinet
 
-culture = nguni
+culture = KhoeKhoe
 religion = shamanism #Fetishism
 capital = "Khomas"
 trade_goods = unknown

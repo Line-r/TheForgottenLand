@@ -1,6 +1,6 @@
 # - Graaff-Reinet
 
-culture = nguni
+culture = Nama
 religion = shamanism #Fetishism
 capital = "Karas"
 trade_goods = unknown

@@ -1,4 +1,4 @@
-
+discovered_by = south_african_tech
 discovered_by = east_african
 
 

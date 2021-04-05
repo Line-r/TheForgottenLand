@@ -1,0 +1,81 @@
+#Country Name: Please seefilename.
+
+graphical_culture = africangfx
+
+color = { 79  175  240 }
+revolutionary_colors = { 14 0 15 }
+
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	offensive_ideas
+	spy_ideas
+	diplomatic_ideas
+	religious_ideas
+	economic_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	african_clubmen
+	bantu_tribal_warfare
+	bantu_plains_warfare
+	bantu_gunpowder_warfare
+	westernized_bantu
+	african_western_franchise_warfare
+	african_somali_cavalry
+	african_abyssinian_cavalry
+	african_abyssinian_light_cavalry
+	african_hussar
+	african_dragoon		
+}
+
+
+monarch_names = {
+	" #0" = 20
+	"Themba #0" = 20
+	"Uuka #0" = 20
+	"Nomlanga #0" = 20
+	"Bathandwa #0" = 20
+	"Daluxolo #0" = 20
+	"Esihle #0" = 20
+	"Fezile #0" = 20
+	"Gcobani #0" = 20
+	"Akhona #0" = 20
+	"Anathi #0" = 20
+	"Aphiwe #0" = 20
+	"Aviwe #0" = 20
+	"Ayabonga #0" = 20
+	"Bhutana #0" = 20
+	"Bonginkosi #0" = 20
+	"Bulelani#0" = 20
+	"Dumisa #0" = 20
+	"Fezekile #0" = 20
+	"Fezile #0" = 20
+	"Fundani #0" = 20
+	"Gugulethu #0" = 20
+	"Jongikhaya #0" = 20
+	"Khwezi #0" = 20
+	"Khuselwa #0" = 20
+	"Langa #0" = 20
+	"Lonwabo #0" = 20
+	"Lubabalo #0" = 20
+	"Luthando #0" = 20
+	"Luzuko #0" = 20
+	"Lwazi #0" = 20
+	"Mabhuti #0" = 20
+	"Madoda #0" = 20
+	"Malibongwe #0" = 20
+	
+	"Babalwa #0" = -1
+	"Bathandwa #0" = -1
+	"Buhle #0" = -1
+	"Fundiswa #0" = -1
+}
+
+leader_names = {
+	Bonginkosi Kagiso Bhekizizwe Bhekmbuso Shaka Shaka Kgabu Gatsha Langa Phila Msizi Nkosiyabo Linda Mpilo Siyanda Nkanyezi Sipho
+	Bafana Lwandle Sfiso Thulani Thando Sanele Anele Lungelo Dumisani Bangizwe Fanyana Fanyana Mpumelelo Mthunzi Nkosenye Zithulele
+}
+ship_names = {
+}
